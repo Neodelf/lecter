@@ -1,3 +1,5 @@
+require 'rest-client'
+
 class Lecter::DiagnosisController < ActionController::Base
   def new
   end
@@ -7,13 +9,13 @@ class Lecter::DiagnosisController < ActionController::Base
 
   def create
     if diagnosis_params[:method].downcase == 'get'
-      response = RestClient.get(
+      response = ::RestClient.get(
         'localhost:3000/' + diagnosis_params[:endpoint],
         params: (YAML.load(diagnosis_params[:params]) || {}).merge(lecter_analysis: true)
       ).body
       prepare_data(response)
     elsif diagnosis_params[:method].downcase == 'post'
-      response = RestClient.post(
+      response = ::RestClient.post(
         'localhost:3000/' + diagnosis_params[:endpoint],
         YAML.load(diagnosis_params[:params]).merge(lecter_analysis: true)
       ).body
