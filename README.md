@@ -1,8 +1,8 @@
 # Lecter
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/lecter`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+There are a lot of people around developing web apps also as new developers on projects. Sometimes they don't know how app works and which exactly processes work.
+That gem will help them to understand which code executes per request.
+ 
 
 ## Installation
 
@@ -22,7 +22,16 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+
+1. Use multithreading server such like a `puma` with workers more than `1`.
+2. Precompile `railscasts.css` and `highlight.pack.js` assets.
+3. Add routes in your `routes.rb`
+
+`` `ruby
+ruby namespace :lecter do 
+  resource :diagnosis, only: %i[show create new], controller: :diagnosis end 
+end
+```
 
 ## Development
 
@@ -33,6 +42,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/lecter. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+If you want to help please feel free to add new issue.
 
 ## License
 
