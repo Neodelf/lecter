@@ -1,4 +1,5 @@
 require 'rest-client'
+require 'slim-rails'
 
 class Lecter::DiagnosisController < ActionController::Base
   def new

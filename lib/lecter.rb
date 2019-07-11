@@ -1,8 +1,6 @@
 require "lecter/version"
 
 module Lecter
-  class Error < StandardError; end
-
   class Engine < ::Rails::Engine
   end
 
