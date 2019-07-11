@@ -1,0 +1,11 @@
+<h1>New Lecter diagnosis</h1>
+
+<%= form_tag lecter_diagnosis_path do %>
+  <% %i[endpoint method params].each do |attr|  %>
+    <p>
+      <%= label_tag attr %>
+      <%= text_field_tag attr %>
+    </p>
+  <% end %>
+  <%= submit_tag :send %>
+<% end %>

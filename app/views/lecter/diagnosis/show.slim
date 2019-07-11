@@ -1,0 +1,57 @@
+= javascript_include_tag 'highlight.pack.js', '//code.jquery.com/jquery-1.12.4.js', '//code.jquery.com/ui/1.12.1/jquery-ui.js'
+= stylesheet_link_tag 'railscasts', '//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css'
+
+
+h1 Lecter diagnosis
+
+.left
+  div id='accordion'
+    - @lines.each_with_index do |item, item_index|
+      div
+        h5 id="anchor#{item_index}"
+          - file = item.keys.first
+          = file
+          - lines = item.values.split(' ').flatten.map(&:to_i)
+          = lines
+          - previous_row_is_empty = false
+        div
+          pre
+            - file_context = File.open(file, 'r').read.split("\n")
+            - file_context.each_with_index do |row, index_row|
+              - include = lines.include?(index_row + 1)
+              - if include || lines.reduce(false) { |memo, line| memo || index_row.in?(line - 5..line + 4) }
+                - previous_row_is_empty = false
+                code class='ruby' style=('background-color: #4a4a4a;' if include)
+                  = "#{index_row + 1} #{row} #{lines.index(index_row + 1) + 1 if include}"
+              - elsif !previous_row_is_empty
+                code
+                  - previous_row_is_empty = true
+                  '...
+.right
+  - @lines.each_with_index do |item, item_index|
+    p
+      = link_to item.keys.first.split('/').last, "#anchor#{item_index}"
+
+css:
+  .ui-accordion .ui-accordion-header {
+    font-size: 78%;
+  }
+
+  .left {
+    float: left;
+    width: 70%;
+  }
+
+  .right {
+    float: left;
+    padding-left: 10px;
+  }
+
+javascript:
+  hljs.initHighlightingOnLoad();
+  $('#accordion > div').accordion({
+    header: 'h5',
+    heightStyle: 'content',
+    collapsible: true,
+    active: 1
+  });
