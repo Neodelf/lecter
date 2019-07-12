@@ -27,11 +27,19 @@ Or install it yourself as:
 2. Precompile `railscasts.css` and `highlight.pack.js` assets.
 3. Add routes in your `routes.rb`
 
-```ruby
-namespace :lecter do
-  resource :diagnosis, only: %i[show create new], controller: :diagnosis
-end
-```
+    ```ruby
+    namespace :lecter do
+      resource :diagnosis, only: %i[show create new], controller: :diagnosis
+    end
+    ```
+
+4. Go to `/lecter/diagnosis/new` and fill
+
+ `endpoint` - route like `blogs`
+ 
+ `method` - `get` or `post`
+ 
+ `params` - parameters which will be handled on request. If you use `get` method please add your parameters in url
 
 ## Contributing
 
