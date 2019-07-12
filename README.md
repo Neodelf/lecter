@@ -33,13 +33,13 @@ Or install it yourself as:
     end
     ```
 
-4. Go to `/lecter/diagnosis/new` and fill
+4. Go to `/lecter/diagnosis/new` and fill fields:
 
- `endpoint` - route like `blogs`
+    `endpoint` - route like `blogs` without slash at the first char
  
- `method` - `get` or `post`
+    `method` - `get` or `post`
  
- `params` - parameters which will be handled on request. If you use `get` method please add your parameters in url
+    `params` - parameters which will be handled on request. If you use `get` method please add your parameters to `endpoint` (i.e. `blogs?author_name=Andrey`)
 
 ## Contributing
 
