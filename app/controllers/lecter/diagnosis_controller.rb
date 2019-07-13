@@ -50,9 +50,11 @@ module Lecter
 
     def format_params
       @format_params ||= begin
-        return {} unless diagnosis_params[:params].present?
-
-        json_parse(diagnosis_params[:params]).merge(lecter_analysis_parameter)
+        if diagnosis_params[:method] == 'get'
+          {}
+        else
+          json_parse(diagnosis_params[:params])
+        end.merge(lecter_analysis_parameter)
       rescue JSON::ParserError
         flash[:error] = 'Wrong parameters'
         return render :new
