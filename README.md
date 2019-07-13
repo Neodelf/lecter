@@ -33,11 +33,11 @@ Or install it yourself as:
 
 4. Go to `/lecter/diagnosis/new` and fill fields:
 
-    `endpoint` - route like `blogs` without slash at the first char
+    `endpoint` - use absolute route like `localhost:3000/blogs` without slash at the first char.
  
-    `params` - parameters which will be handled on request. If you use `get` method please add your parameters to `endpoint` (i.e. `blogs?author_name=Andrey`)
+    `params` - parameters which will be handled on request.
  
-    `method` - choose one variant `get` or `post`
+    `method` - choose one variant `GET` or `POST`.
 
 ## Contributing
 
