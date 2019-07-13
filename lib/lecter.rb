@@ -1,10 +1,9 @@
-require "lecter/version"
+require 'lecter/version'
+require 'lecter/engine'
+require 'lecter/rack'
 
 module Lecter
-  class Engine < ::Rails::Engine
-  end
-
-  autoload :Rack, 'lecter/rack'
+  # autoload :Rack, 'lecter/rack'
 
   if defined? Rails::Railtie
     class LecterRailtie < Rails::Railtie
