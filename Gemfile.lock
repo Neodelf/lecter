@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    lecter (0.1.1)
+    lecter (0.1.3)
       rest-client
       slim-rails
 
