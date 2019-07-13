@@ -10,13 +10,12 @@ h1 Lecter diagnosis
       div
         h5 id="anchor#{item_index}"
           - file = item.keys.first
-          = file
+          = file.remove(Rails.root.to_s)
           - lines = item.values.split(' ').flatten.map(&:to_i)
-          = lines
           - previous_row_is_empty = false
         div
           pre
-            - file_context = File.open(file, 'r').read.split("\n")
+            - file_context = File.open(Rails.root.join(file), 'r').read.split("\n")
             - file_context.each_with_index do |row, index_row|
               - include = lines.include?(index_row + 1)
               - if include || lines.reduce(false) { |memo, line| memo || index_row.in?(line - 5..line + 4) }

@@ -26,8 +26,12 @@ class Lecter::Rack
       tp.enable
     end
     status, headers, response = @app.call(env)
+    if tp
+      status = 200
+      response = [thread[:items]]
+    end
 
-    [status, headers, tp ? [thread[:items]] : response]
+    [status, headers, response]
   ensure
     tp.disable if tp
   end
