@@ -24,6 +24,7 @@ class Lecter::Rack
         end
       end
       tp.enable
+      ActionController::Base.allow_forgery_protection = false
     end
     status, headers, response = @app.call(env)
     if tp
@@ -33,6 +34,9 @@ class Lecter::Rack
 
     [status, headers, response]
   ensure
-    tp.disable if tp
+    return unless tp
+
+    tp.disable
+    ActionController::Base.allow_forgery_protection = true
   end
 end
