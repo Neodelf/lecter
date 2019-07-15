@@ -34,9 +34,9 @@ class Lecter::Rack
 
     [status, headers, response]
   ensure
-    return unless tp
-
-    tp.disable
-    ActionController::Base.allow_forgery_protection = true
+    if tp
+      tp.disable
+      ActionController::Base.allow_forgery_protection = true
+    end
   end
 end
