@@ -9,7 +9,7 @@ That gem will help them to understand which code executes per request.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'lecter'
+gem 'lecter', git: 'https://github.com/neodelf/lecter'
 ```
 
 And then execute:
@@ -24,7 +24,7 @@ Or install it yourself as:
 
 
 1. Use multithreading server such like a `puma` with workers more than `1`.
-2. Precompile `railscasts.css` and `highlight.pack.js` assets.
+2. Precompile `railscasts.css highlight.pack.js` assets.
 3. Add routes in your `routes.rb`
 
     ```ruby
