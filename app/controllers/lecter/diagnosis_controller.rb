@@ -13,7 +13,7 @@ module Lecter
 
     def create
       response =
-        case diagnosis_params[:method]
+        case diagnosis_method
         when 'get'
           ::RestClient.get(diagnosis_params[:endpoint], params: format_params)
         when 'post'
@@ -50,7 +50,7 @@ module Lecter
 
     def format_params
       @format_params ||= begin
-        if diagnosis_params[:method] == 'get'
+        if diagnosis_method == 'get'
           {}
         else
           json_parse(diagnosis_params[:params])
@@ -67,8 +67,12 @@ module Lecter
 
     def json_parse(string)
       string = '{' + string + '}' unless string.match(/\A{.*}\z/)
-      string.gsub!('=>', ':').gsub!(/(“|”)/, '"')
+      string.gsub!('=>', ':')&.gsub!(/(“|”)/, '"')
       JSON.parse(string)
+    end
+
+    def diagnosis_method
+      diagnosis_params[:method].downcase
     end
   end
 end
