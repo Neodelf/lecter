@@ -21,7 +21,7 @@ h1 Lecter diagnosis
               - if include || lines.reduce(false) { |memo, line| memo || index_row.in?(line - 5..line + 4) }
                 - previous_row_is_empty = false
                 code class='ruby' style=('background-color: #4a4a4a;' if include)
-                  = "#{index_row + 1} #{row} #{lines.index(index_row + 1) + 1 if include}"
+                  = "#{index_row + 1} #{row} #{lines.each_with_index.select { |_, index| lines[index] == index_row + 1 }.map { |_, index| index + 1 }.join(', ') if include}"
               - elsif !previous_row_is_empty
                 code
                   - previous_row_is_empty = true
