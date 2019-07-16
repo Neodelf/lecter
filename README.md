@@ -39,6 +39,15 @@ Or install it yourself as:
  
     `method` - choose one variant `GET` or `POST`
 
+Examples to use
+ 1. `POST` method:
+
+ ![alt text](https://raw.githubusercontent.com/neodelf/staff/master/lecter_post_web.gif)
+
+ 2. `GET` method:
+
+ ![alt text](https://raw.githubusercontent.com/neodelf/staff/master/lecter_get_web.gif)
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/neodelf/lecter. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
