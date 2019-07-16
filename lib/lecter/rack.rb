@@ -26,10 +26,13 @@ class Lecter::Rack
       tp.enable
       ActionController::Base.allow_forgery_protection = false
     end
+
     status, headers, response = @app.call(env)
+
     if tp
+      response = [status.to_s + thread[:items]]
       status = 200
-      response = [thread[:items]]
+      headers = {}
     end
 
     [status, headers, response]

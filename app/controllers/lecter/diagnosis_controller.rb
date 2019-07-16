@@ -35,9 +35,10 @@ module Lecter
       params.permit(:endpoint, :params, :method)
     end
 
-    def prepare_data(items)
+    def prepare_data(response_body)
       @lines = []
-      @items = items.split(';')
+      @response_status = response_body[0..2]
+      @items = response_body[3..-1].split(';')
       @items.each do |item|
         file = item.split(' ')[0]
         if @lines.last.is_a?(Hash) && @lines.last.keys.first.to_s == file

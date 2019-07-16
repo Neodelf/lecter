@@ -5,6 +5,8 @@
 h1 Lecter diagnosis
 
 .left
+  h4
+    'Response status #{@response_status}
   div id='accordion'
     - @lines.each_with_index do |item, item_index|
       div
