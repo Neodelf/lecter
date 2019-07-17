@@ -51,6 +51,12 @@ Examples to use
  ![alt text](https://raw.githubusercontent.com/neodelf/staff/master/lecter_post_web.gif)
 
  2. `GET` method:
+ 
+    `endpoint` - `localhost:3000/posts`
+
+    `params` - empty field
+
+    `method` - `GET`
 
  ![alt text](https://raw.githubusercontent.com/neodelf/staff/master/lecter_get_web.gif)
 
