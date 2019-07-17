@@ -41,6 +41,12 @@ Or install it yourself as:
 
 Examples to use
  1. `POST` method:
+ 
+    `endpoint` - `localhost:3000/posts`
+    
+    `params` - `"post"=>{"title"=>"New title", "description"=>"Desciption"}`
+    
+    `method` - `POST`
 
  ![alt text](https://raw.githubusercontent.com/neodelf/staff/master/lecter_post_web.gif)
 
