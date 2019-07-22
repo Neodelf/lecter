@@ -13,14 +13,11 @@ module Lecter
     end
 
     def create
-      response =
-        case diagnosis_method
-        when 'get'
-          ::RestClient.get(diagnosis_params[:endpoint], params: format_params)
-        when 'post'
-          ::RestClient.post(diagnosis_params[:endpoint], format_params)
-        end
-
+      response = RestClient::Request.execute(
+        method: diagnosis_method.downcase.to_sym,
+        url: diagnosis_params[:endpoint],
+        payload: format_params
+      )
       return render :new unless response
 
       prepare_data(response.body)

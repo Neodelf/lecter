@@ -12,7 +12,7 @@
   <% end %>
   <p>
     <%= label_tag :method %>
-    <%= select_tag :method, options_for_select(%w[GET POST], 'GET') %>
+    <%= select_tag :method, options_for_select(%w[GET POST PUT PATCH DELETE], 'GET') %>
   </p>
   <%= submit_tag :send %>
 <% end %>
