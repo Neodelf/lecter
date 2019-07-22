@@ -9,7 +9,9 @@ That gem will help them to understand which code executes per request.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'lecter', git: 'https://github.com/neodelf/lecter'
+group :development do
+  gem 'lecter', git: 'https://github.com/neodelf/lecter'
+end
 ```
 
 And then execute:
