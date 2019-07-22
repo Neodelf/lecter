@@ -9,6 +9,7 @@ module Lecter
     end
 
     def show
+      redirect_to new_diagnosis_path
     end
 
     def create
