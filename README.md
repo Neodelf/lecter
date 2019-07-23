@@ -1,4 +1,4 @@
-# Lecter
+# Lecter. Online debugger
 
 There are a lot of people around developing web apps also as new developers on projects. Sometimes they don't know how app works and which exactly processes work.
 That gem will help them to understand which code executes per request.
