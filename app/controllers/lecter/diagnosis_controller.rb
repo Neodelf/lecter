@@ -25,6 +25,9 @@ module Lecter
     rescue URI::InvalidURIError
       flash[:error] = 'Wrong url'
       return render :new
+    rescue RestClient::ExceptionWithResponse => e
+      flash[:error] = e.message
+      return render :new
     end
 
     private
@@ -49,11 +52,7 @@ module Lecter
 
     def format_params
       @format_params ||= begin
-        if diagnosis_method == 'get'
-          {}
-        else
-          json_parse(diagnosis_params[:params])
-        end.merge(lecter_analysis_parameter)
+        json_parse(diagnosis_params[:params]).merge(lecter_analysis_parameter)
       rescue JSON::ParserError
         flash[:error] = 'Wrong parameters'
         return render :new
