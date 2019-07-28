@@ -1,10 +1,13 @@
 = javascript_include_tag 'highlight.pack.js', '//code.jquery.com/jquery-1.12.4.js', '//code.jquery.com/ui/1.12.1/jquery-ui.js'
 = stylesheet_link_tag 'railscasts'
 
-
-h1 Lecter diagnosis
+= content_for :title, t('.title')
 
 .left
+  - @lines.each_with_index do |item, item_index|
+    p
+      = link_to item.keys.first.split('/').last, "#anchor#{item_index}"
+.right
   h4
     'Response status #{@response_status}
   - @lines.each_with_index do |item, item_index|
@@ -26,10 +29,6 @@ h1 Lecter diagnosis
             code
               - previous_row_is_empty = true
               '...
-.right
-  - @lines.each_with_index do |item, item_index|
-    p
-      = link_to item.keys.first.split('/').last, "#anchor#{item_index}"
 
 css:
   .ui-accordion .ui-accordion-header {
@@ -38,12 +37,12 @@ css:
 
   .left {
     float: left;
-    width: 70%;
   }
 
   .right {
     float: left;
     padding-left: 10px;
+    width: 70%;
   }
 
   .listing {

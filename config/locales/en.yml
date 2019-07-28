@@ -1,0 +1,10 @@
+en:
+  layouts:
+    lecter:
+      new_diagnosis: 'New diagnosis'
+  lecter:
+    diagnosis:
+      show:
+        title: 'Diagnosis results'
+      new:
+        title: 'New diagnosis'

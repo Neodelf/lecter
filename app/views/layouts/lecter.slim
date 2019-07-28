@@ -1,0 +1,66 @@
+html
+  head
+    title
+      = yield(:title)
+
+  body
+    .nav
+      .nav-inner
+        ul
+          li
+            = link_to t('.new_diagnosis'), new_diagnosis_path
+    .body-wrapper
+      = yield
+
+
+
+css:
+  .body-wrapper {
+    overflow: hidden;
+    *zoom: 1;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: block;
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .nav {
+    font-weight: 500;
+    background: #0b4e22;
+    border-bottom: 1px solid #cccccc;
+  }
+
+  .nav-inner {
+    display: block;
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .ul {
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    list-style-type: none;
+    margin: 0;
+    padding: 8px 2px 8px;
+    display: -webkit-flex;
+    display: flex;
+  }
+
+  .li {
+    -webkit-flex: 0 1 auto;
+    flex: 0 1 auto;
+    display: list-item;
+    text-align: -webkit-match-parent;
+    list-style-type: none;
+  }
+
+  li > a {
+    text-decoration: none;
+    font-weight: 400;
+    color: white;
+    letter-spacing: 0.4px;
+  }
+
