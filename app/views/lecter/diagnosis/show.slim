@@ -3,10 +3,11 @@
 
 = content_for :title, t('.title')
 
-.left
-  - @lines.each_with_index do |item, item_index|
-    p
-      = link_to item.keys.first.split('/').last, "#anchor#{item_index}"
+.sidebar
+  .sidebar-wrapper
+    ul
+      - @lines.each_with_index do |item, item_index|
+        li = link_to item.keys.first.split('/').last, "#anchor#{item_index}"
 .right
   h4
     'Response status #{@response_status}
@@ -35,8 +36,13 @@ css:
     font-size: 78%;
   }
 
-  .left {
+  .sidebar {
     float: left;
+  }
+
+  .sidebar > .sidebar-wrapper {
+    width: 235px;
+    overflow-y: auto;
   }
 
   .right {
