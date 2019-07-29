@@ -14,24 +14,46 @@
   - @lines.each_with_index do |item, item_index|
     .filename id="anchor#{item_index}"
       - file = item.keys.first
-      = file.remove(Rails.root.to_s)
+      .arrow-right
+      .filename-title
+        = file.remove(Rails.root.to_s)
       - lines = item.values.split(' ').flatten.map(&:to_i)
       - previous_row_is_empty = false
     .listing
+      - file_context = File.open(Rails.root.join(file), 'r').read.split("\n")
+      - html_rows = []
+      - file_context.each_with_index do |row, index_row|
+        - include = lines.include?(index_row + 1)
+        - if include || lines.reduce(false) { |memo, line| memo || index_row.in?(line - 5..line + 4) }
+          - previous_row_is_empty = false
+          - html_row = "#{index_row + 1} #{'-> ' + lines.each_with_index.select { |_, index| lines[index] == index_row + 1 }.map { |_, index| index + 1 }.join(', ') if include} #{row}\n"
+          - html_rows << content_tag(:code, html_row, style: "#{include ? 'background-color: #4a4a4a;' : nil}")
+        - elsif !previous_row_is_empty
+          - previous_row_is_empty = true
+          - html_rows << "...\n"
       pre
-        - file_context = File.open(Rails.root.join(file), 'r').read.split("\n")
-        - file_context.each_with_index do |row, index_row|
-          - include = lines.include?(index_row + 1)
-          - if include || lines.reduce(false) { |memo, line| memo || index_row.in?(line - 5..line + 4) }
-            - previous_row_is_empty = false
-            code class='ruby' style=('background-color: #4a4a4a;' if include)
-              = "#{index_row + 1} #{'-> ' + lines.each_with_index.select { |_, index| lines[index] == index_row + 1 }.map { |_, index| index + 1 }.join(', ') if include} #{row}"
-          - elsif !previous_row_is_empty
-            code
-              - previous_row_is_empty = true
-              '...
+        code
+          - html_rows.each do |html_row|
+            = html_row
 
 css:
+  .arrow-right {
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid black;
+    float: left;
+    margin: 7px;
+  }
+
+  .down {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid black;
+    margin: 10px 7px 0 5px;
+  }
+
   .ui-accordion .ui-accordion-header {
     font-size: 78%;
   }
@@ -42,13 +64,39 @@ css:
 
   .sidebar > .sidebar-wrapper {
     width: 235px;
-    overflow-y: auto;
+    position: fixed;
+    margin: 49px 33px 0 0;
+    overflow-y: scroll;
+    top: 82px;
+    bottom: 40px;
+  }
+
+  .sidebar-wrapper > ul {
+    list-style-type: none;
+    height: calc(100% - 40px);
+  }
+
+  .sidebar-wrapper > ul > li {
+    margin-bottom: 3px;
+  }
+
+  .sidebar-wrapper > ul > li > a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    font-size: 13px;
+    text-inline: 1.5;
+  }
+
+  .sidebar-wrapper > ul > li > a:hover {
+    color: #7d7d7d;
   }
 
   .right {
     float: left;
     padding-left: 10px;
     width: 70%;
+    margin-left: 297px;
   }
 
   .listing {
@@ -76,6 +124,12 @@ javascript:
     hljs.initHighlighting();
 
     $('.filename').on('click', function(){
+      $(this).find('.arrow-right').toggleClass('down')
       $(this).next().slideToggle();
+    });
+
+    $('.sidebar-wrapper > ul > li > a').on('click', function(){
+      var anchor = $(this).first().attr('href').split('#').pop();
+      $('.filename#'+anchor).click();
     });
   })
