@@ -8,3 +8,7 @@ en:
         title: 'Diagnosis results'
       new:
         title: 'New diagnosis'
+        endpoint: 'Endpoint'
+        params: 'Parameters'
+        method: 'HTTP method'
+        create: 'Create'
