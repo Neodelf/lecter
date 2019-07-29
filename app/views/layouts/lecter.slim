@@ -2,7 +2,8 @@ html
   head
     title
       = yield(:title)
-
+    = stylesheet_link_tag    'lecter'
+    = javascript_include_tag 'lecter'
   body
     .nav
       .nav-inner
@@ -11,74 +12,3 @@ html
             = link_to t('.new_diagnosis'), new_diagnosis_path
     .body-wrapper
       = yield
-
-
-
-css:
-  body {
-    font-family: "Helvetica Neue", "Helvetica", Arial, "Open Sans", sans-serif;
-    font-size: 15px;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  .body-wrapper {
-    overflow: hidden;
-    *zoom: 1;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    display: block;
-    max-width: 955px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-
-  .nav {
-    font-weight: 500;
-    background: #0b4e22;
-    border-bottom: 1px solid #cccccc;
-  }
-
-  .nav-inner {
-    display: block;
-    max-width: 955px;
-    margin: 0 auto;
-    padding: 1px 20px;
-  }
-
-  .nav-inner > ul {
-    list-style-type: none;
-  }
-
-  .nav-inner > ul > li > a {
-    text-decoration: none;
-    font-weight: 600;
-    color: white;
-    letter-spacing: 0.4px;
-  }
-
-  .ul {
-    -webkit-justify-content: space-between;
-    justify-content: space-between;
-    list-style-type: none;
-    margin: 0;
-    padding: 8px 2px 8px;
-    display: -webkit-flex;
-    display: flex;
-  }
-
-  .li {
-    -webkit-flex: 0 1 auto;
-    flex: 0 1 auto;
-    display: list-item;
-    text-align: -webkit-match-parent;
-    list-style-type: none;
-  }
-
-  .nav-inner > li > a {
-    text-decoration: none;
-    font-weight: 400;
-    color: white;
-    letter-spacing: 0.4px;
-  }
-
