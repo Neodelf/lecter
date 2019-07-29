@@ -35,7 +35,7 @@ And then execute:
  
     `params` - parameters which will be handled on request
  
-    `method` - choose one variant `GET` or `POST`
+    `method` - choose one variant
 
 Examples to use
  1. `POST` method:
