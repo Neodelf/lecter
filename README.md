@@ -46,7 +46,11 @@ Examples to use
     
     `method` - `POST`
 
- ![alt text](https://raw.githubusercontent.com/neodelf/staff/master/lecter_post_web.gif)
+ ![alt text](https://raw.githubusercontent.com/neodelf/staff/master/lecter_post_new.png)
+ 
+  After submitting you will receive something like this:
+ 
+ ![alt text](https://raw.githubusercontent.com/neodelf/staff/master/lecter_post_show.png)
 
  2. `GET` method:
  
@@ -56,7 +60,11 @@ Examples to use
 
     `method` - `GET`
 
- ![alt text](https://raw.githubusercontent.com/neodelf/staff/master/lecter_get_web.gif)
+ ![alt text](https://raw.githubusercontent.com/neodelf/staff/master/lecter_get_new.png)
+ 
+  After submitting you will receive something like this:
+ 
+ ![alt text](https://raw.githubusercontent.com/neodelf/staff/master/lecter_get_show.png)
 
 ## Contributing
 
