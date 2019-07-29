@@ -1,4 +1,6 @@
-<h1>New Lecter diagnosis</h1>
+<%= content_for :title, t('.title')  %>
+
+<h1><%= t('.title') %></h1>
 
 <%= form_tag diagnosis_path do %>
   <% flash.each do |key, value| %>
@@ -6,13 +8,13 @@
   <% end %>
   <% %i[endpoint params].each do |attr|  %>
     <p>
-      <%= label_tag attr %>
+      <%= label_tag t(".#{attr}") %>
       <%= text_field_tag attr %>
     </p>
   <% end %>
   <p>
-    <%= label_tag :method %>
+    <%= label_tag t('.method') %>
     <%= select_tag :method, options_for_select(%w[GET POST PUT PATCH DELETE], 'GET') %>
   </p>
-  <%= submit_tag :send %>
+  <%= submit_tag t('.create') %>
 <% end %>

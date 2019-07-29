@@ -1,0 +1,15 @@
+en:
+  layouts:
+    lecter:
+      new_diagnosis: 'New diagnosis'
+  lecter:
+    diagnosis:
+      show:
+        title: 'Diagnosis results'
+        response_status: 'Response status: %{status}'
+      new:
+        title: 'New diagnosis'
+        endpoint: 'Endpoint'
+        params: 'Parameters'
+        method: 'HTTP method'
+        create: 'Create'

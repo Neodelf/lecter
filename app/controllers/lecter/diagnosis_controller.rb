@@ -3,6 +3,7 @@ require 'slim-rails'
 
 module Lecter
   class DiagnosisController < ActionController::Base
+    layout 'lecter'
     before_action :format_params, only: :create
 
     def new

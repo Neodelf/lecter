@@ -1,0 +1,14 @@
+html
+  head
+    title
+      = yield(:title)
+    = stylesheet_link_tag    'lecter'
+    = javascript_include_tag 'lecter'
+  body
+    .nav
+      .nav-inner
+        ul
+          li
+            = link_to t('.new_diagnosis'), new_diagnosis_path
+    .body-wrapper
+      = yield

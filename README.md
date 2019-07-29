@@ -22,7 +22,7 @@ And then execute:
 
 
 1. Use multithreading server such like a `puma` with workers more than `1`.
-2. Precompile `railscasts.css highlight.pack.js` assets.
+2. Precompile `lecter.css lecter.js` assets.
 3. Add routes in your `routes.rb`
 
     ```ruby

@@ -1,76 +1,52 @@
 = javascript_include_tag 'highlight.pack.js', '//code.jquery.com/jquery-1.12.4.js', '//code.jquery.com/ui/1.12.1/jquery-ui.js'
 = stylesheet_link_tag 'railscasts'
 
+= content_for :title, t('.title')
 
-h1 Lecter diagnosis
-
-.left
+.sidebar
+  .sidebar-wrapper
+    ul
+      - @lines.each_with_index do |item, item_index|
+        li = link_to item.keys.first.split('/').last, "#anchor#{item_index}"
+.right
   h4
-    'Response status #{@response_status}
+    = t('.response_status', status: @response_status)
   - @lines.each_with_index do |item, item_index|
     .filename id="anchor#{item_index}"
       - file = item.keys.first
-      = file.remove(Rails.root.to_s)
+      .arrow-right
+      .filename-title
+        = file.remove(Rails.root.to_s)
       - lines = item.values.split(' ').flatten.map(&:to_i)
       - previous_row_is_empty = false
     .listing
+      - file_context = File.open(Rails.root.join(file), 'r').read.split("\n")
+      - html_rows = []
+      - file_context.each_with_index do |row, index_row|
+        - include = lines.include?(index_row + 1)
+        - if include || lines.reduce(false) { |memo, line| memo || index_row.in?(line - 5..line + 4) }
+          - previous_row_is_empty = false
+          - html_row = "#{index_row + 1} #{'-> ' + lines.each_with_index.select { |_, index| lines[index] == index_row + 1 }.map { |_, index| index + 1 }.join(', ') if include} #{row}\n"
+          - html_rows << content_tag(:code, html_row, style: "#{include ? 'background-color: #4a4a4a;' : nil}")
+        - elsif !previous_row_is_empty
+          - previous_row_is_empty = true
+          - html_rows << "...\n"
       pre
-        - file_context = File.open(Rails.root.join(file), 'r').read.split("\n")
-        - file_context.each_with_index do |row, index_row|
-          - include = lines.include?(index_row + 1)
-          - if include || lines.reduce(false) { |memo, line| memo || index_row.in?(line - 5..line + 4) }
-            - previous_row_is_empty = false
-            code class='ruby' style=('background-color: #4a4a4a;' if include)
-              = "#{index_row + 1} #{'-> ' + lines.each_with_index.select { |_, index| lines[index] == index_row + 1 }.map { |_, index| index + 1 }.join(', ') if include} #{row}"
-          - elsif !previous_row_is_empty
-            code
-              - previous_row_is_empty = true
-              '...
-.right
-  - @lines.each_with_index do |item, item_index|
-    p
-      = link_to item.keys.first.split('/').last, "#anchor#{item_index}"
-
-css:
-  .ui-accordion .ui-accordion-header {
-    font-size: 78%;
-  }
-
-  .left {
-    float: left;
-    width: 70%;
-  }
-
-  .right {
-    float: left;
-    padding-left: 10px;
-  }
-
-  .listing {
-    display: none;
-    padding: 1em 2.2em;
-    overflow: auto;
-    border-bottom-right-radius: 4px;
-    border: 0.5px solid;
-    border-top-width: 0;
-    border-bottom-left-radius: 4px;
-    background: #efefef;
-  }
-
-  .filename {
-    cursor: pointer;
-    position: relative;
-    margin: 2px 0 0 0;
-    padding: .5em .5em .5em .7em;
-    border: solid 0.1px;
-    background: #efefef;
-  }
+        code
+          - html_rows.each do |html_row|
+            = html_row
 
 javascript:
   $(document).ready(function(){
     hljs.initHighlighting();
 
     $('.filename').on('click', function(){
+      $(this).find('.arrow-right').toggleClass('down')
       $(this).next().slideToggle();
+    });
+
+    $('.sidebar-wrapper > ul > li > a').on('click', function(){
+      var anchor = $(this).first().attr('href').split('#').pop();
+      $('.filename#'+anchor).click();
     });
   })
