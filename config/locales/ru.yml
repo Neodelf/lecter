@@ -6,6 +6,7 @@ ru:
     diagnosis:
       show:
         title: 'Диагноз'
+        response_status: 'Статус ответа: %{status}'
       new:
         title: 'Новый диагноз'
         endpoint: 'Абсолютный путь'

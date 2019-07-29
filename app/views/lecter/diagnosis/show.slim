@@ -10,7 +10,7 @@
         li = link_to item.keys.first.split('/').last, "#anchor#{item_index}"
 .right
   h4
-    'Response status #{@response_status}
+    = t('.response_status', status: @response_status)
   - @lines.each_with_index do |item, item_index|
     .filename id="anchor#{item_index}"
       - file = item.keys.first
