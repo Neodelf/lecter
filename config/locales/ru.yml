@@ -1,0 +1,14 @@
+ru:
+  layouts:
+    lecter:
+      new_diagnosis: 'Новый диагноз'
+  lecter:
+    diagnosis:
+      show:
+        title: 'Диагноз'
+      new:
+        title: 'Новый диагноз'
+        endpoint: 'Абсолютный путь'
+        params: 'Параметры'
+        method: 'HTTP метод'
+        create: 'Создать'
