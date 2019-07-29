@@ -1,4 +1,6 @@
-# Lecter. Online debugger
+ <p align="center">
+  <img src="https://github.com/Neodelf/staff/blob/master/lecter_web_with_text.png?raw=true" alt="Lecter Logo" width="866px"/>
+</p>
 
 There are a lot of people around developing web apps also as new developers on projects. Sometimes they don't know how app works and which exactly processes work.
 That gem will help them to understand which code executes per request.
@@ -46,11 +48,16 @@ Examples to use
     
     `method` - `POST`
 
- ![alt text](https://raw.githubusercontent.com/neodelf/staff/master/lecter_post_new.png)
+  <p align="center">
+   <img src="https://raw.githubusercontent.com/neodelf/staff/master/lecter_post_new.png" alt="lecter_post_new" width="866px"/>
+  </p>
+
  
   After submitting you will receive something like this:
- 
- ![alt text](https://raw.githubusercontent.com/neodelf/staff/master/lecter_post_show.png)
+
+  <p align="center">
+   <img src="https://raw.githubusercontent.com/neodelf/staff/master/lecter_post_show.png" alt="lecter_post_show" width="866px"/>
+  </p>
 
  2. `GET` method:
  
@@ -60,11 +67,16 @@ Examples to use
 
     `method` - `GET`
 
- ![alt text](https://raw.githubusercontent.com/neodelf/staff/master/lecter_get_new.png)
+  <p align="center">
+   <img src="https://raw.githubusercontent.com/neodelf/staff/master/lecter_get_new.png" alt="lecter_get_new" width="866px"/>
+  </p>
  
   After submitting you will receive something like this:
  
- ![alt text](https://raw.githubusercontent.com/neodelf/staff/master/lecter_get_show.png)
+  <p align="center">
+   <img src="https://raw.githubusercontent.com/neodelf/staff/master/lecter_get_show.png" alt="lecter_get_show" width="866px"/>
+  </p>
+ 
 
 ## Contributing
 
