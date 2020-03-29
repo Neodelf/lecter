@@ -13,6 +13,8 @@ class Lecter::Rack
           !tp.path.include?('/app/views') &&
           !tp.path.include?('/app/helpers') &&
           tp.path.include?(Rails.root.to_s) &&
+          # tp.path.include?('/Users/neodelf/.rvm/gems/ruby-2.6.4@test_app/gems/rubocop-0.74.0/lib/rubocop/cop/layout/multiline_method_call_indentation.rb')||
+          # tp.path.include?('/Users/neodelf/.rvm/gems/ruby-2.6.4@test_app/gems/rubocop-0.74.0/lib/rubocop/cop/layout/multiline_assignment_layout.rb')) &&
           tp.method_id != :method_added &&
           tp.defined_class != Module &&
           tp.defined_class != Class &&
@@ -40,6 +42,7 @@ class Lecter::Rack
     if tp
       tp.disable
       ActionController::Base.allow_forgery_protection = true
+      Thread.current[:items] = nil
     end
   end
 end
