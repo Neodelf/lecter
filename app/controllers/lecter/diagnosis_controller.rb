@@ -1,5 +1,4 @@
 require 'rest-client'
-require 'slim-rails'
 require 'lecter/requester'
 require 'lecter/formatter_payload'
 require 'lecter/html_generator'

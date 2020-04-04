@@ -1,0 +1,47 @@
+<%= content_for :title, t('.title') %>
+
+<div class="sidebar">
+  <div class="sidebar-wrapper">
+    <ul>
+      <% @file_listings.each_with_index do |file_listing, index| %>
+        <li>
+          <a href="#anchor<%= index %>">
+            <%= file_listing.file_name.split('/').last %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+<div class="right">
+  <h4>
+    <%= t('.response_status', status: @response_status) %>
+  </h4>
+  <% @file_listings.each_with_index do |file_listing, index| %>
+    <div class="filename" id="anchor<%=index%>">
+      <div class="arrow-right"></div>
+      <div class="filename-title"><%= file_listing.file_name.remove(Rails.root.to_s) %></div>
+    </div>
+    <div class="listing">
+      <pre>
+        <code><% file_listing.html_rows.each do |html_row| %><%= html_row %><% end %></code>
+      </pre>
+    </div>
+  <% end %>
+</div>
+
+<%= javascript_tag do %>
+  $(document).ready(function(){
+  hljs.initHighlighting();
+
+  $('.filename').on('click', function(){
+      $(this).find('.arrow-right').toggleClass('down')
+      $(this).next().slideToggle();
+    });
+
+    $('.sidebar-wrapper > ul > li > a').on('click', function(){
+      var anchor = $(this).first().attr('href').split('#').pop();
+      $('.filename#'+anchor).click();
+    });
+  })
+<% end %>

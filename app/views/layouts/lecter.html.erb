@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title><%= yield(:title) %></title>
+    <%= stylesheet_link_tag 'lecter' %>
+    <%= javascript_include_tag 'lecter', '//code.jquery.com/jquery-1.12.4.js', '//code.jquery.com/ui/1.12.1/jquery-ui.js' %>
+  </head>
+
+  <body>
+    <div class="nav">
+      <div class="nav-inner">
+        <ul>
+          <li>
+            <%= link_to t('.new_diagnosis'), new_diagnosis_path %>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="body-wrapper">
+      <%= yield %>
+    </div>
+  </body>
+</html>
