@@ -8,14 +8,14 @@ There are a lot of cases when developers (even if you have much experience) don'
 That gem will help you to understand which code executes per request.
 
 ## Table of contents
-* [Prerequisites][#prerequisites]
+* [:loudspeaker: Prerequisites](#prerequisites)
 * [:spiral_notepad: Installing](#installing)
 * [Using](#using)
 * [Examples of using](#examples_of_using)
 * [Contributing](#contributing)
 * [License](#license)
 
-## Prerequisites
+## :loudspeaker: Prerequisites
 Please use multithreading server such like a [puma](https://github.com/puma/puma) with workers more than `1`.<br>
 More information about how to tune puma server please follow the [link](https://github.com/puma/puma#clustered-mode).
 
@@ -37,7 +37,7 @@ Installing is **a very simple process**.
     ```
 
 3. Precompile `lecter.css lecter.js` assets.<br>
-    More information about it and how to do it please follow the [link](https://guides.rubyonrails.org/asset_pipeline.html#precompiling-assets).
+    More information about it and how to do it please follow the [ruby on rails' guide](https://guides.rubyonrails.org/asset_pipeline.html#precompiling-assets).
 
 4. Add routes in your `config/routes.rb`:
     ```ruby
@@ -49,15 +49,15 @@ You should do two **simple steps**:
 
 1. Go to `/lecter/diagnosis/new`
 
-2. Fill form fields with parameters of the request which you want to investigate:
+2. Fill form's fields with request's parameters:
 
     `endpoint` - use absolute route like `localhost:3000/blogs`<br>
-    `params` - parameters which will be handled on request<br>
-    `method` - choose one variant
+    `params` - request's parameters<br>
+    `method` - request's method
 
 ## Examples of using
-There are two examples with different request's method:
-
+There are two examples with different request's method. For example, you want to investigate request which is
+ 
 1. `POST` method:
 
     `endpoint` - `localhost:3000/posts`<br>
