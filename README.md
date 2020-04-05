@@ -8,12 +8,12 @@ There are a lot of cases when developers (even if you have much experience) don'
 That gem will help you to understand which code executes per request.
 
 ## Table of contents
-* [:memo: Installation](#installation)
+* [:spiral_notepad: Installation](#installation)
 * [Usage](#usage)
 * [Contributing](#contributing)
 * [License](#license)
 
-## :memo: Installation
+## :spiral_notepad: Installation
 
 Installation is very simple. Add this line to your application's Gemfile:
 
