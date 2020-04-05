@@ -37,15 +37,16 @@ And then execute:
 
 4. Go to `/lecter/diagnosis/new` and fill fields:
 
-    `endpoint` - use absolute route like `localhost:3000/blogs` 
-    `params` - parameters which will be handled on request
+    `endpoint` - use absolute route like `localhost:3000/blogs`<br>
+    `params` - parameters which will be handled on request<br>
     `method` - choose one variant
 
 Examples to use:
+
  1. `POST` method:
 
-    `endpoint` - `localhost:3000/posts`
-    `params` - `"post"=>{"title"=>"New title", "description"=>"Desciption"}`
+    `endpoint` - `localhost:3000/posts`<br>
+    `params` - `"post"=>{"title"=>"New title", "description"=>"Desciption"}`<br>
     `method` - `POST`
 
   <p align="center">
@@ -60,8 +61,8 @@ Examples to use:
 
  2. `GET` method:
 
-    `endpoint` - `localhost:3000/posts`
-    `params` - empty field
+    `endpoint` - `localhost:3000/posts`<br>
+    `params` - empty field<br>
     `method` - `GET`
 
   <p align="center">
