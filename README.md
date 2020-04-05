@@ -8,7 +8,8 @@ There are a lot of cases when developers (even if you have much experience) don'
 That gem will help you to understand which code executes per request.
 
 ## Table of contents
-* [Installation](#installation)
+* [:memo: Installation](#installation)
+* [Usage](#usage)
 * [Contributing](#contributing)
 * [License](#license)
 
