@@ -93,13 +93,13 @@ There are two examples with different request's method. For example, you want to
     `endpoint` - `localhost:3000/posts`<br>
     `params` - empty field<br>
     `method` - `GET`
-    
+
     <p align="center">
     <img src="https://raw.githubusercontent.com/neodelf/staff/master/lecter_get_new.png" alt="lecter_get_new" width="866px"/>
     </p>
-    
+
     After submitting you will receive something like this:
-    
+
     <p align="center">
     <img src="https://raw.githubusercontent.com/neodelf/staff/master/lecter_get_show.png" alt="lecter_get_show" width="866px"/>
     </p>
