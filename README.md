@@ -5,7 +5,7 @@
 [![Gem Version](https://badge.fury.io/rb/lecter.svg)](https://badge.fury.io/rb/lecter)
 
 There are a lot of cases when developers (even if you have much experience) don't know how exactly their commercial application works.
-That gem will help you to understand which code executes per request.
+So main purpose of that gem is to help developers to understand which code executes by request.
 
 ## :heart: Contributing
 1. Bug reports and pull requests **are welcome**.
@@ -21,13 +21,13 @@ That gem will help you to understand which code executes per request.
 * [:card_file_box: License](#license)
 
 ## :loudspeaker: Prerequisites
-Please use multithreading server such like a [puma](https://github.com/puma/puma) with workers more than `1`.<br>
+Please **use multithreading server** such like a [puma](https://github.com/puma/puma) with workers more than `1`.<br>
 More information about how to tune puma server please follow the [link](https://github.com/puma/puma#clustered-mode).
 
 ## :hammer_and_wrench: Installing
 Installing is **a very simple process**.
 
-1. Add this lines to your application's Gemfile:
+1. **Add** that gem to your Gemfile:
 
     ```ruby
     group :development do
@@ -35,16 +35,16 @@ Installing is **a very simple process**.
     end
     ```
 
-2. Execute in terminal in application's directory:
+2. **Execute** in terminal in application's directory:
 
     ```zsh
     ➜  application_name ✗ bundle
     ```
 
-3. Precompile `lecter.css lecter.js` assets.<br>
+3. **Precompile** `lecter.css lecter.js` assets.<br>
     More information about it and how to do it please follow the [ruby on rails' guide](https://guides.rubyonrails.org/asset_pipeline.html#precompiling-assets).
 
-4. Add routes in your `config/routes.rb`:
+4. **Add** routes to your `config/routes.rb`:
     ```ruby
     mount Lecter::Engine => '/lecter'
     ```
@@ -52,9 +52,9 @@ Installing is **a very simple process**.
 ## :joystick: Using
 You should do two **simple steps**:
 
-1. Go to `/lecter/diagnosis/new`
+1. **Go** to `/lecter/diagnosis/new`
 
-2. Fill form's fields with request's parameters:
+2. **Fill** form's fields with request's parameters:
 
     `endpoint` - use absolute route like `localhost:3000/blogs`<br>
     `params` - request's parameters<br>
