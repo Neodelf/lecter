@@ -108,7 +108,7 @@ There are two examples with different request's method. For example, you want to
 1. Bug reports and pull requests **are welcome**.
 2. There are many issues as a proposal to improve this library. If you have any ideas please **feel free** to write your thoughts in [new issue](https://github.com/Neodelf/lecter/issues/new).
 3. Choose **what you like** to fix or improve on the [issues list](https://github.com/Neodelf/lecter/issues). You can ask any questions in the comments.
-4. :bangbang: Mention of each contributor will be on README file. 
+4. :bangbang: **Mention of each contributor** will be on README file. 
 
 ## :card_file_box: License
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
