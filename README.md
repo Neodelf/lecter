@@ -4,16 +4,33 @@
 
 [![Gem Version](https://badge.fury.io/rb/lecter.svg)](https://badge.fury.io/rb/lecter)
 
-There are a lot of cases when developers (even if you have much experience) don't know how exactly their commercial application works.
-So main purpose of that gem is to help developers to understand which code executes by request.
+
+So 
 
 ## Table of contents
+* [:rotating_light: Problems](#problem)
+* [:rocket: Solution](#solution)
 * [:loudspeaker: Prerequisites](#prerequisites)
 * [:hammer_and_wrench: Installing](#installing)
 * [:joystick: Using](#using)
 * [:man_technologist: Examples of using](#examples_of_using)
 * [:heart: Contributing](#contributing)
 * [:card_file_box: License](#license)
+
+## :rotating_light: Problems
+1. Developers don't know how their app works.
+2. Reading code is a long process.
+3. You can't keep many lines of code.
+
+## :rocket: Solution
+The main purpose of that gem is **to help developers to understand which code executes** by request.<br>
+Gem's work can been compared with visiting a doctor.
+
+**You give sympthomes** of your disease and **receive diagnosis**.<br>
+**You give parameters** of request and **receive executable code**. 
+
+You don't have to work with debuggers, read and remember many lines of code.<br>
+Just **give&receive**!
 
 ## :loudspeaker: Prerequisites
 Please **use multithreading server** such like a [puma](https://github.com/puma/puma) with workers more than `1`.<br>
@@ -30,10 +47,10 @@ Installing is **a very simple process**.
     end
     ```
 
-2. **Execute** in terminal in application's directory:
+2. **Execute** in terminal in app's directory:
 
     ```zsh
-    ➜  application_name ✗ bundle
+    ➜  app_name ✗ bundle
     ```
 
 3. **Precompile** `lecter.css lecter.js` assets.<br>
