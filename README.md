@@ -4,9 +4,6 @@
 
 [![Gem Version](https://badge.fury.io/rb/lecter.svg)](https://badge.fury.io/rb/lecter)
 
-
-So 
-
 ## Table of contents
 * [:rotating_light: Problems](#problem)
 * [:rocket: Solution](#solution)
@@ -18,9 +15,9 @@ So
 * [:card_file_box: License](#license)
 
 ## :rotating_light: Problems
-1. Developers don't know how their app works.
-2. Reading code is a long process.
-3. You can't keep many lines of code.
+1. Developers **don't know** how their app works.
+2. Reading code is a **long process**.
+3. Memorize many lines of code is **difficult**.
 
 ## :rocket: Solution
 The main purpose of that gem is **to help developers to understand which code executes** by request.<br>
