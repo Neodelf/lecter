@@ -13,7 +13,7 @@ That gem will help you to understand which code executes per request.
 * [Contributing](#contributing)
 * [License](#license)
 
-## Installation
+## :memo: Installation
 
 Installation is very simple. Add this line to your application's Gemfile:
 
