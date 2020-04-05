@@ -9,9 +9,9 @@ That gem will help you to understand which code executes per request.
 
 ## :heart: Contributing
 1. Bug reports and pull requests **are welcome**.
-2. There are many issues as a proposal to improve this library. If you have any ideas please **feel free** to write your thoughts on [new issues] (https://github.com/Neodelf/lecter/issues/new).
+2. There are many issues as a proposal to improve this library. If you have any ideas please **feel free** to write your thoughts in [new issue](https://github.com/Neodelf/lecter/issues/new).
 3. Choose **what you like** to fix or improve on the [issues list](https://github.com/Neodelf/lecter/issues). You can ask any questions in the comments.
-4. :bung: Mention of each contributor will be on README file. 
+4. :bangbang: Mention of each contributor will be on README file. 
 
 ## Table of contents
 * [:loudspeaker: Prerequisites](#prerequisites)
