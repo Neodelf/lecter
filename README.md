@@ -9,17 +9,17 @@ That gem will help you to understand which code executes per request.
 
 ## Table of contents
 * [:loudspeaker: Prerequisites](#prerequisites)
-* [:spiral_notepad: Installing](#installing)
-* [Using](#using)
-* [Examples of using](#examples_of_using)
-* [Contributing](#contributing)
-* [License](#license)
+* [:hammer_and_wrench: Installing](#installing)
+* [:joystick: Using](#using)
+* [:man_technologist: Examples of using](#examples_of_using)
+* [:heart: Contributing](#contributing)
+* [:card_file_box: License](#license)
 
 ## :loudspeaker: Prerequisites
 Please use multithreading server such like a [puma](https://github.com/puma/puma) with workers more than `1`.<br>
 More information about how to tune puma server please follow the [link](https://github.com/puma/puma#clustered-mode).
 
-## :spiral_notepad: Installing
+## :hammer_and_wrench: Installing
 Installing is **a very simple process**.
 
 1. Add this lines to your application's Gemfile:
@@ -44,7 +44,7 @@ Installing is **a very simple process**.
     mount Lecter::Engine => '/lecter'
     ```
 
-## Using
+## :joystick: Using
 You should do two **simple steps**:
 
 1. Go to `/lecter/diagnosis/new`
@@ -55,7 +55,7 @@ You should do two **simple steps**:
     `params` - request's parameters<br>
     `method` - request's method
 
-## Examples of using
+## :man_technologist: Examples of using
 There are two examples with different request's method. For example, you want to investigate request which is
  
 1. `POST` method:
@@ -91,10 +91,10 @@ There are two examples with different request's method. For example, you want to
     </p>
  
 
-## Contributing
+## :heart: Contributing
 1. Bug reports and pull requests **are welcome**.
 2. There are many issues as a proposal to improve this library. If you have any ideas please **feel free** to write your thoughts on [new issues] (https://github.com/Neodelf/lecter/issues/new).
 3. Choose **what you like** to fix or improve on the issues list. You can ask any questions in the comments.
 
-## License
+## :card_file_box: License
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
