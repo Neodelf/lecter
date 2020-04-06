@@ -5,12 +5,12 @@
 [![Gem Version](https://badge.fury.io/rb/lecter.svg)](https://badge.fury.io/rb/lecter)
 
 ## Table of contents
-* [:rotating_light: Problems](#rotating_light-problem)
+* [:rotating_light: Problems](#rotating_light-problems)
 * [:rocket: Solution](#rocket-solution)
 * [:loudspeaker: Prerequisites](#loudspeaker-prerequisites)
 * [:hammer_and_wrench: Installing](#hammer_and_wrench-installing)
 * [:joystick: Using](#joystick-using)
-* [:man_technologist: Example of using](#man_technologist-example_of_using)
+* [:man_technologist: Example of using](#man_technologist-example-of-using)
 * [:heart: Contributing](#heart-contributing)
 * [:card_file_box: License](#card_file_box-license)
 
