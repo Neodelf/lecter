@@ -4,84 +4,96 @@
 
 [![Gem Version](https://badge.fury.io/rb/lecter.svg)](https://badge.fury.io/rb/lecter)
 
-There are a lot of cases when developers (even if you have much experience) don't know how exactly their commercial application works.
-That gem will help you to understand which code executes per request.
-
 ## Table of contents
-* [Installation](#installation)
-* [Contributing](#contributing)
-* [License](#license)
+* [:rotating_light: Problems](#rotating_light-problems)
+* [:rocket: Solution](#rocket-solution)
+* [:loudspeaker: Prerequisites](#loudspeaker-prerequisites)
+* [:hammer_and_wrench: Installing](#hammer_and_wrench-installing)
+* [:joystick: Using](#joystick-using)
+* [:man_technologist: Example of using](#man_technologist-example-of-using)
+* [:heart: Contributing](#heart-contributing)
+* [:card_file_box: License](#card_file_box-license)
 
-## Installation
+## :rotating_light: Problems
+1. Developers **don't know** how their app works.
+2. Reading code is a **long** process.
+3. Memorize many lines of code is **difficult**.
 
-Installation is very simple. Add this line to your application's Gemfile:
+## :rocket: Solution
+The main purpose of that gem is **to help developers to understand which code executes** by request.<br>
 
-```ruby
-group :development do
-  gem 'lecter'
-end
-```
+Gem's work can been compared with visiting a doctor:
+You give sympthomes of your disease and **receive diagnosis**.<br>
+You give parameters of request and **receive executable code**. 
 
-And then execute:
+You don't have to work with debuggers, read and remember many lines of code.<br>
+Just **give&receive**!
 
-    $ bundle
+## :loudspeaker: Prerequisites
+Please **use multithreading server** such like a [puma](https://github.com/puma/puma) with workers more than `1`.<br>
+More information about how to tune puma server please follow the [link](https://github.com/puma/puma#clustered-mode).
 
-## Usage
- 1. Use multithreading server such like a [puma](https://github.com/puma/puma) with workers more than `1`. More information about it and how to do it please follow the [link](https://github.com/puma/puma#clustered-mode).
- 2. Precompile `lecter.css lecter.js` assets. More information about it and how to do it please follow the [link](https://guides.rubyonrails.org/asset_pipeline.html#precompiling-assets).
- 3. Add routes in your `routes.rb`
+## :hammer_and_wrench: Installing
+Installing is a **very simple** process.
 
+1. **Add** that gem to your Gemfile:
+
+    ```ruby
+    group :development do
+      gem 'lecter'
+    end
+    ```
+
+2. **Execute** in terminal in app's directory:
+
+    ```zsh
+    ➜  app_name ✗ bundle
+    ```
+
+3. **Precompile** `lecter.css lecter.js` assets.<br>
+    More information about it and how to do it please follow the [ruby on rails' guide](https://guides.rubyonrails.org/asset_pipeline.html#precompiling-assets).
+
+4. **Add** routes to your `config/routes.rb`:
     ```ruby
     mount Lecter::Engine => '/lecter'
     ```
 
-4. Go to `/lecter/diagnosis/new` and fill fields:
+## :joystick: Using
+You should do **two** simple steps:
+
+1. **Go** to `/lecter/diagnosis/new`
+
+2. **Fill** form's fields with request's parameters:
 
     `endpoint` - use absolute route like `localhost:3000/blogs`<br>
-    `params` - parameters which will be handled on request<br>
-    `method` - choose one variant
+    `params` - request's parameters<br>
+    `method` - request's method
 
-Examples to use:
+## :man_technologist: Example of using
+There is example with **POST** method:
 
- 1. `POST` method:
+1. **Go** to `localhost:3000`
+
+2. **Fill** form with:
 
     `endpoint` - `localhost:3000/posts`<br>
     `params` - `"post"=>{"title"=>"New title", "description"=>"Desciption"}`<br>
     `method` - `POST`
 
-  <p align="center">
-    <img src="https://raw.githubusercontent.com/neodelf/staff/master/lecter_post_new.png" alt="lecter_post_new" width="866px"/>
-  </p>
- 
-  After submitting you will receive something like this:
+    <img src="https://raw.githubusercontent.com/neodelf/staff/master/lecter_post_form.png" alt="lecter_example_form"/>
 
-  <p align="center">
-    <img src="https://raw.githubusercontent.com/neodelf/staff/master/lecter_post_show.png" alt="lecter_post_show" width="866px"/>
-  </p>
+3. **Submit** form
+4. **Receive** result
 
- 2. `GET` method:
+    <p align="center">
+        <img src="https://raw.githubusercontent.com/neodelf/staff/master/lecter_post_result.png" alt="lecter_example_result"/>
+    </p>
 
-    `endpoint` - `localhost:3000/posts`<br>
-    `params` - empty field<br>
-    `method` - `GET`
+## :heart: Contributing
+1. Bug reports and pull requests **are welcome**.
+2. There are many issues as a proposal to improve this library. If you have any ideas please **feel free** to write your thoughts in [new issue](https://github.com/Neodelf/lecter/issues/new).
+3. Choose **what you like** to fix or improve on the [issues list](https://github.com/Neodelf/lecter/issues). You can ask any questions in the comments.
+4. :bangbang: **Mention of each contributor** will be on README file. 
 
-  <p align="center">
-   <img src="https://raw.githubusercontent.com/neodelf/staff/master/lecter_get_new.png" alt="lecter_get_new" width="866px"/>
-  </p>
- 
-  After submitting you will receive something like this:
- 
-  <p align="center">
-   <img src="https://raw.githubusercontent.com/neodelf/staff/master/lecter_get_show.png" alt="lecter_get_show" width="866px"/>
-  </p>
- 
-
-## Contributing
-
- 1. Bug reports and pull requests **are welcome**.
- 2. There are many issues as a proposal to improve this library. If you have any ideas please **feel free** to write your thoughts on [new issues] (https://github.com/Neodelf/lecter/issues/new).
- 3. Choose **what you like** to fix or improve on the issues list. You can ask any questions in the comments.
-
-## License
-
+## :card_file_box: License
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
