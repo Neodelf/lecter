@@ -70,38 +70,24 @@ You should do two **simple steps**:
     `method` - request's method
 
 ## :man_technologist: Examples of using
-There are two examples with different request's method. For example, you want to investigate request which is
- 
-1. `POST` method:
+There is example with **POST** method:
+
+1. **Go** to `localhost:3000`
+
+2. Fill form with:
 
     `endpoint` - `localhost:3000/posts`<br>
     `params` - `"post"=>{"title"=>"New title", "description"=>"Desciption"}`<br>
     `method` - `POST`
 
-    <p align="center">
+    <p align="center" style="height: 200px">
         <img src="https://raw.githubusercontent.com/neodelf/staff/master/lecter_post_new.png" alt="lecter_post_new" width="866px"/>
     </p>
 
     After submitting you will receive something like this:
 
     <p align="center">
-    <img src="https://raw.githubusercontent.com/neodelf/staff/master/lecter_post_show.png" alt="lecter_post_show" width="866px"/>
-    </p>
-
-2. `GET` method:
-
-    `endpoint` - `localhost:3000/posts`<br>
-    `params` - empty field<br>
-    `method` - `GET`
-
-    <p align="center">
-    <img src="https://raw.githubusercontent.com/neodelf/staff/master/lecter_get_new.png" alt="lecter_get_new" width="866px"/>
-    </p>
-
-    After submitting you will receive something like this:
-
-    <p align="center">
-    <img src="https://raw.githubusercontent.com/neodelf/staff/master/lecter_get_show.png" alt="lecter_get_show" width="866px"/>
+        <img src="https://raw.githubusercontent.com/neodelf/staff/master/lecter_post_show.png" alt="lecter_post_show" width="866px"/>
     </p>
 
 ## :heart: Contributing
