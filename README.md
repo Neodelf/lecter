@@ -21,8 +21,8 @@
 
 ## :rocket: Solution
 The main purpose of that gem is **to help developers to understand which code executes** by request.<br>
-Gem's work can been compared with visiting a doctor.
 
+Gem's work can been compared with visiting a doctor:
 You give sympthomes of your disease and **receive diagnosis**.<br>
 You give parameters of request and **receive executable code**. 
 
