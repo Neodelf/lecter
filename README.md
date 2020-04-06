@@ -5,14 +5,14 @@
 [![Gem Version](https://badge.fury.io/rb/lecter.svg)](https://badge.fury.io/rb/lecter)
 
 ## Table of contents
-* [:rotating_light: Problems](#problem)
-* [:rocket: Solution](#solution)
-* [:loudspeaker: Prerequisites](#prerequisites)
-* [:hammer_and_wrench: Installing](#installing)
-* [:joystick: Using](#using)
-* [:man_technologist: Examples of using](#examples_of_using)
-* [:heart: Contributing](#contributing)
-* [:card_file_box: License](#license)
+* [:rotating_light: Problems](#rotating_light-problem)
+* [:rocket: Solution](#rocket-solution)
+* [:loudspeaker: Prerequisites](#loudspeaker-prerequisites)
+* [:hammer_and_wrench: Installing](#hammer_and_wrench-installing)
+* [:joystick: Using](#joystick-using)
+* [:man_technologist: Example of using](#man_technologist-example_of_using)
+* [:heart: Contributing](#heart-contributing)
+* [:card_file_box: License](#card_file_box-license)
 
 ## :rotating_light: Problems
 1. Developers **don't know** how their app works.
