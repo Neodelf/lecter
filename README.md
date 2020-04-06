@@ -16,15 +16,15 @@
 
 ## :rotating_light: Problems
 1. Developers **don't know** how their app works.
-2. Reading code is a **long process**.
+2. Reading code is a **long** process.
 3. Memorize many lines of code is **difficult**.
 
 ## :rocket: Solution
 The main purpose of that gem is **to help developers to understand which code executes** by request.<br>
 Gem's work can been compared with visiting a doctor.
 
-**You give sympthomes** of your disease and **receive diagnosis**.<br>
-**You give parameters** of request and **receive executable code**. 
+You give sympthomes of your disease and **receive diagnosis**.<br>
+You give parameters of request and **receive executable code**. 
 
 You don't have to work with debuggers, read and remember many lines of code.<br>
 Just **give&receive**!
