@@ -69,7 +69,7 @@ You should do **two** simple steps:
     `params` - request's parameters<br>
     `method` - request's method
 
-## :man_technologist: Examples of using
+## :man_technologist: Example of using
 There is example with **POST** method:
 
 1. **Go** to `localhost:3000`
@@ -80,15 +80,13 @@ There is example with **POST** method:
     `params` - `"post"=>{"title"=>"New title", "description"=>"Desciption"}`<br>
     `method` - `POST`
 
-    <p align="center" style="height: 200px">
-        <img src="https://raw.githubusercontent.com/neodelf/staff/master/lecter_post_new.png" alt="lecter_post_new" width="866px"/>
-    </p>
+    <img src="https://raw.githubusercontent.com/neodelf/staff/master/lecter_post_form.png" alt="lecter_example_form"/>
 
 3. **Submit** form
 4. **Receive** result
 
     <p align="center">
-        <img src="https://raw.githubusercontent.com/neodelf/staff/master/lecter_post_show.png" alt="lecter_post_show" width="866px"/>
+        <img src="https://raw.githubusercontent.com/neodelf/staff/master/lecter_post_result.png" alt="lecter_example_result"/>
     </p>
 
 ## :heart: Contributing
