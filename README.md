@@ -34,7 +34,7 @@ Please **use multithreading server** such like a [puma](https://github.com/puma/
 More information about how to tune puma server please follow the [link](https://github.com/puma/puma#clustered-mode).
 
 ## :hammer_and_wrench: Installing
-Installing is **a very simple process**.
+Installing is a **very simple** process.
 
 1. **Add** that gem to your Gemfile:
 
@@ -59,7 +59,7 @@ Installing is **a very simple process**.
     ```
 
 ## :joystick: Using
-You should do two **simple steps**:
+You should do **two** simple steps:
 
 1. **Go** to `/lecter/diagnosis/new`
 
@@ -74,7 +74,7 @@ There is example with **POST** method:
 
 1. **Go** to `localhost:3000`
 
-2. Fill form with:
+2. **Fill** form with:
 
     `endpoint` - `localhost:3000/posts`<br>
     `params` - `"post"=>{"title"=>"New title", "description"=>"Desciption"}`<br>
@@ -84,7 +84,8 @@ There is example with **POST** method:
         <img src="https://raw.githubusercontent.com/neodelf/staff/master/lecter_post_new.png" alt="lecter_post_new" width="866px"/>
     </p>
 
-    After submitting you will receive something like this:
+3. **Submit** form
+4. **Receive** result
 
     <p align="center">
         <img src="https://raw.githubusercontent.com/neodelf/staff/master/lecter_post_show.png" alt="lecter_post_show" width="866px"/>
