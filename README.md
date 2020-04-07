@@ -22,15 +22,15 @@
 ## :rocket: Solution
 The main purpose of that gem is **to help developers to understand which code executes** by request.<br>
 
-Gem's work can been compared with visiting a doctor:
-You give sympthomes of your disease and **receive diagnosis**.<br>
-You give parameters of request and **receive executable code**. 
+Gem's work could be compared with visiting a doctor:
+You give symptoms of your disease and **receive a diagnosis**.<br>
+You give parameters of a request and **receive executable code**. 
 
 You don't have to work with debuggers, read and remember many lines of code.<br>
 Just **give&receive**!
 
 ## :loudspeaker: Prerequisites
-Please **use multithreading server** such like a [puma](https://github.com/puma/puma) with workers more than `1`.<br>
+Please a **use multithreading server** such as a [puma](https://github.com/puma/puma) with more than `1` workers.<br>
 More information about how to tune puma server please follow the [link](https://github.com/puma/puma#clustered-mode).
 
 ## :hammer_and_wrench: Installing
@@ -44,17 +44,17 @@ Installing is a **very simple** process.
     end
     ```
 
-2. **Execute** in terminal in app's directory:
+2. **Execute** in a terminal in app's directory:
 
     ```zsh
-    ➜  bundle install
+    bundle install
     ```
 
 3. **Precompile** assets<br>
     Add `lecter.css lecter.js` to your `config/initializers/assets.rb` like this:
  
     ```ruby
-      Rails.application.config.assets.precompile += %w(lecter.css lecter.js)
+    Rails.application.config.assets.precompile += %w(lecter.css lecter.js)
     ```
     More information about it and how to do it please follow the [ruby on rails' guide](https://guides.rubyonrails.org/asset_pipeline.html#precompiling-assets).
 
@@ -68,14 +68,14 @@ You should do **two** simple steps:
 
 1. **Go** to `/lecter/diagnosis/new`
 
-2. **Fill** form's fields with request's parameters:
+2. **Fill** form fields with request parameters:
 
     `endpoint` - use absolute route like `localhost:3000/blogs`<br>
     `params` - request's parameters<br>
     `method` - request's method
 
 ## :man_technologist: Example of using
-There is example with **POST** method:
+There is an example with **POST** method:
 
 1. **Go** to `localhost:3000`
 
@@ -96,9 +96,9 @@ There is example with **POST** method:
 
 ## :heart: Contributing
 1. Bug reports and pull requests **are welcome**.
-2. There are many issues as a proposal to improve this library. If you have any ideas please **feel free** to write your thoughts in [new issue](https://github.com/Neodelf/lecter/issues/new).
+2. There are many issues as a proposal to improve this library. If you have any ideas please **feel free** to write your thoughts in a [new issue](https://github.com/Neodelf/lecter/issues/new).
 3. Choose **what you like** to fix or improve on the [issues list](https://github.com/Neodelf/lecter/issues). You can ask any questions in the comments.
-4. :bangbang: **Mention of each contributor** will be on README file. 
+4. :bangbang: **Mention of each contributor** will be on the README file. 
 
 ## :card_file_box: License
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
