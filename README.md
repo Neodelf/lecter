@@ -47,10 +47,15 @@ Installing is a **very simple** process.
 2. **Execute** in terminal in app's directory:
 
     ```zsh
-    ➜  app_name ✗ bundle
+    ➜  bundle install
     ```
 
-3. **Precompile** `lecter.css lecter.js` assets.<br>
+3. **Precompile** assets<br>
+    Add `lecter.css lecter.js` to your `config/initializers/assets.rb` like this:
+ 
+    ```ruby
+      Rails.application.config.assets.precompile += %w(lecter.css lecter.js)
+    ```
     More information about it and how to do it please follow the [ruby on rails' guide](https://guides.rubyonrails.org/asset_pipeline.html#precompiling-assets).
 
 4. **Add** routes to your `config/routes.rb`:
