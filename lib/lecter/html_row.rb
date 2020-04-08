@@ -26,13 +26,13 @@ module Lecter
     end
 
     def row_calling_order_number
-      if file_includes_row
-        ARROW + lines
-                .each_with_index
-                .select { |_, index| lines[index] == file_row_number }
-                .map { |_, index| index + 1 }
-                .join(', ')
-      end
+      return unless file_includes_row
+
+      ARROW + lines
+              .each_with_index
+              .select { |_, index| lines[index] == file_row_number }
+              .map { |_, index| index + 1 }
+              .join(', ')
     end
 
     def style

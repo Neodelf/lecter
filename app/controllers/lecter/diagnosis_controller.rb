@@ -17,11 +17,7 @@ module Lecter
     end
 
     def create
-      requester = Lecter::Requester.new(
-        method: diagnosis_params[:method].downcase.to_sym,
-        url: diagnosis_params[:endpoint],
-        payload: formatter_payload.result
-      )
+      requester = Lecter::Requester.new(requester_params)
       if requester.call
         @file_listings = HtmlGenerator.new(requester.lines).call
         render :show
@@ -37,15 +33,23 @@ module Lecter
       params.permit(:endpoint, :params, :method)
     end
 
+    def requester_params
+      {
+        method: diagnosis_params[:method].downcase.to_sym,
+        url: diagnosis_params[:endpoint],
+        payload: formatter_payload.result
+      }
+    end
+
     def format_payload
-      unless formatter_payload.call
-        flash[:error] = formatter_payload.error_message
-        render :new
-      end
+      return if formatter_payload.call
+
+      flash[:error] = formatter_payload.error_message
+      render :new
     end
 
     def formatter_payload
-      @formatted_payload ||= Lecter::FormatterPayload.new(diagnosis_params[:params])
+      @formatter_payload ||= Lecter::FormatterPayload.new(diagnosis_params[:params])
     end
   end
 end
