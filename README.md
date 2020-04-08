@@ -30,7 +30,7 @@ You don't have to work with debuggers, read and remember many lines of code.<br>
 Just **give&receive**!
 
 ## :loudspeaker: Prerequisites
-Please a **use multithreading server** such as a [puma](https://github.com/puma/puma) with more than `1` workers.<br>
+Please **use a multithreading server** such as a [puma](https://github.com/puma/puma) with more than `1` workers.<br>
 More information about how to tune puma server please follow the [link](https://github.com/puma/puma#clustered-mode).
 
 ## :hammer_and_wrench: Installing
@@ -68,7 +68,7 @@ You should do **two** simple steps:
 
 1. **Go** to `/lecter/diagnosis/new`
 
-2. **Fill** form fields with request parameters:
+2. **Fill in** form fields with request parameters:
 
     `endpoint` - use absolute route like `localhost:3000/blogs`<br>
     `params` - request's parameters<br>
