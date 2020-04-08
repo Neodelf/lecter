@@ -4,12 +4,27 @@ orbs:
 
 jobs:
   build:
-    docker:
-    - image: circleci/ruby:2.6.3-stretch-node
-    executor: ruby/default
+    executor: ruby
     steps:
     - checkout
+    - resolve-dependencies
+    - run-linter
+  build-rspec:
+    executor: ruby
+    steps:
+    - checkout
+    - resolve-dependencies
+    - run-linter
+    - run-tests-rspec
+  run-linter:
+    steps:
     - run:
-        name: Which bundler?
-        command: bundle -v
-    - ruby/bundle-install
+        name: Run Rubocop verifications
+        command: |
+          mkdir -p /tmp/linter-results/rubocop
+          bundle exec rubocop \
+            --require rubocop/formatter/junit_formatter \
+            --format RuboCop::Formatter::JUnitFormatter \
+            --out /tmp/linter-results/rubocop/results.xml
+    - store_test_results:
+        path: /tmp/linter-results
