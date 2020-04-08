@@ -1,6 +1,7 @@
 require 'lecter/version'
-require 'lecter/engine'
 require 'lecter/rack'
+
+require 'lecter/engine' if defined?(::Rails::Engine)
 
 module Lecter
   # autoload :Rack, 'lecter/rack'
