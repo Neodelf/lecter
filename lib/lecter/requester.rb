@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Lecter
   class Requester
     attr_reader :lines, :error_message
@@ -38,7 +40,7 @@ module Lecter
         if lines.last.is_a?(Hash) && lines.last.keys.first.to_s == file
           lines.last[file] = lines.last[file] << item.split(' ')[1].to_i
         else
-          lines << {"#{file}" => [item.split(' ')[1].to_i]}
+          lines << { file.to_s => [item.split(' ')[1].to_i] }
         end
       end
       lines

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rest-client'
 require 'lecter/requester'
 require 'lecter/formatter_payload'
@@ -8,8 +10,7 @@ module Lecter
     layout 'lecter'
     before_action :format_payload, only: :create
 
-    def new
-    end
+    def new; end
 
     def show
       redirect_to new_diagnosis_path
@@ -39,7 +40,7 @@ module Lecter
     def format_payload
       unless formatter_payload.call
         flash[:error] = formatter_payload.error_message
-        return render :new
+        render :new
       end
     end
 
