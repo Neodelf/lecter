@@ -1,28 +1,37 @@
 version: 2.1
-orbs:
-  ruby: circleci/ruby@0.1.2
-
+references:
+  rspec: &rspec
+    run:
+      name: Run test suite
+      command: bundle exec rspec
+  restore: &restore
+    restore_cache:
+      keys:
+      - v1-dependencies-{{ checksum "Gemfile.lock" }}
+      # fallback to using the latest cache if no exact match is found
+      - v1-dependencies-
+  bundle: &bundle
+    run:
+      name: install dependencies
+      command: bundle install --path vendor/bundle
+  save: &save
+    save_cache:
+      paths:
+      - ./vendor/bundle
+      key: v1-dependencies-{{ checksum "Gemfile.lock" }}
 jobs:
-  build:
+  "ruby-2.5":
     docker:
-      - image: circleci/ruby:2.6.3-stretch-node
-
+    - image: circleci/ruby:2.6.3
     steps:
-      - checkout
+    - checkout
+    - <<: *restore
+    - <<: *bundle
+    - <<: *save
+    - <<: *rspec
 
-      - run:
-          name: Which bundler?
-          command: bundle -v
-
-      - run:
-          name: Bundle Install
-          command: bundle install
-
-      - run:
-          name: Run rspec in parallel
-          command: |
-            bundle exec rspec --profile 10 \
-                              --format RspecJunitFormatter \
-                              --out test_results/rspec.xml \
-                              --format progress \
-                              $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
+workflows:
+  version: 2
+  build:
+    jobs:
+    - "ruby-2.6.3"
