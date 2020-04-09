@@ -7,7 +7,7 @@ references:
   rubocop: &rubocop
     run:
       name: Run rubocop linter
-      command: bundle exec rubocop --enable-pending-cops
+      command: bundle exec rubocop
   restore: &restore
     restore_cache:
       keys:
