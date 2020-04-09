@@ -1,5 +1,4 @@
 AllCops:
-  NewCops: enable
   Exclude:
   - 'lib/lecter/html_generator.rb'
   - 'lib/lecter/rack.rb'
@@ -7,3 +6,5 @@ Documentation:
   Enabled: false
 Metrics/LineLength:
   Max: 100
+Style/ANewCop:
+  Enable: true
