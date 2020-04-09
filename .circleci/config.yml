@@ -4,6 +4,10 @@ references:
     run:
       name: Run test suite
       command: bundle exec rspec
+  rubocop: &rubocop
+    run:
+      name: Run rubocop linter
+      command: bundle exec rubocop
   restore: &restore
     restore_cache:
       keys:
@@ -31,6 +35,7 @@ jobs:
     - <<: *bundle
     - <<: *save
     - <<: *rspec
+    - <<: *rubocop
 
 workflows:
   version: 2
