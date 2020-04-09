@@ -1,4 +1,5 @@
 AllCops:
+  NewCops: enable
   Exclude:
   - 'lib/lecter/html_generator.rb'
   - 'lib/lecter/rack.rb'
