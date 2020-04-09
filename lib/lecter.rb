@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'lecter/version'
 require 'lecter/rack'
 

@@ -1,0 +1,8 @@
+AllCops:
+  Exclude:
+  - 'lib/lecter/html_generator.rb'
+  - 'lib/lecter/rack.rb'
+Documentation:
+  Enabled: false
+Metrics/LineLength:
+  Max: 100

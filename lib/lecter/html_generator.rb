@@ -1,17 +1,19 @@
+# frozen_string_literal: true
+
 require 'lecter/html_row'
 
 module Lecter
   class HtmlGenerator
-    COUNT_LINES_AROUND_RUNNING_ROW = 5.freeze
-    ELLIPSIS = "...".freeze
-    NEW_LINE = "\n".freeze
+    COUNT_LINES_AROUND_RUNNING_ROW = 5
+    ELLIPSIS = '...'
+    NEW_LINE = "\n"
 
     def initialize(data)
       @data = data
     end
-    
+
     def call
-      @data.each_with_index.map do |item, item_index|
+      @data.each_with_index.map do |item, _item_index|
         @file_name = item.keys.first
 
         @executable_row_numbers = item.values.split(' ').flatten.map(&:to_i)
@@ -27,7 +29,8 @@ module Lecter
               file_row,
               file_row_index + 1,
               row_executable,
-              executable_row_numbers).create
+              executable_row_numbers
+            ).create
           elsif !previous_row_is_empty
             previous_row_is_empty = true
             ELLIPSIS + NEW_LINE
@@ -42,11 +45,12 @@ module Lecter
 
     attr_accessor :executable_row_numbers, :file_row_index, :file_name
 
-    def file_row_in_showing_range?(index)
+    def file_row_in_showing_range?(_index)
       executable_row_numbers.reduce(false) do |memo, row_number|
         memo || file_row_index.in?(
           row_number - COUNT_LINES_AROUND_RUNNING_ROW - 1..
-            row_number + COUNT_LINES_AROUND_RUNNING_ROW - 1)
+            row_number + COUNT_LINES_AROUND_RUNNING_ROW - 1
+        )
       end
     end
 

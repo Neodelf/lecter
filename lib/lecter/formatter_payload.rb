@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Lecter
   class FormatterPayload
     attr_reader :result, :error_message

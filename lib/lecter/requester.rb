@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Lecter
   class Requester
     attr_reader :lines, :error_message
@@ -6,17 +8,13 @@ module Lecter
       @method = params[:method]
       @url = params[:url]
       @payload = params[:payload]
+      @lines = []
     end
 
     def call
-      response = RestClient::Request.execute(
-        method: method,
-        url: url,
-        payload: payload
-      )
       return false unless response
 
-      prepare_lines(response.body)
+      prepare_lines
     rescue URI::InvalidURIError
       @error_message = 'Wrong url'
       false
@@ -29,19 +27,33 @@ module Lecter
 
     attr_accessor :method, :url, :payload
 
-    def prepare_lines(response_body)
-      @lines = []
-      response_status = response_body[0..2]
-      items = response_body[3..-1].split(';')
+    def prepare_lines
       items.each do |item|
-        file = item.split(' ')[0]
-        if lines.last.is_a?(Hash) && lines.last.keys.first.to_s == file
-          lines.last[file] = lines.last[file] << item.split(' ')[1].to_i
+        file, unknown_variable = item.split(' ')
+        unknown_variable = unknown_variable.to_i
+
+        if line_belongs_to_last?(file)
+          lines.last[file] = lines.last[file] << unknown_variable
         else
-          lines << {"#{file}" => [item.split(' ')[1].to_i]}
+          lines << { file.to_s => [unknown_variable] }
         end
       end
-      lines
+    end
+
+    def response
+      @response ||= RestClient::Request.execute(
+        method: method,
+        url: url,
+        payload: payload
+      )
+    end
+
+    def items
+      @items ||= response.body[3..-1].split(';')
+    end
+
+    def line_belongs_to_last?(file)
+      lines.last.is_a?(Hash) && lines.last.keys.first.to_s == file
     end
   end
 end
