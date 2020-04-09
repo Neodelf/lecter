@@ -13,7 +13,9 @@ references:
   bundle: &bundle
     run:
       name: install dependencies
-      command: bundle install --path vendor/bundle
+      command: |
+        gem install bundler -v 2.1.2
+        bundle install --path vendor/bundle
   save: &save
     save_cache:
       paths:
