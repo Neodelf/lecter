@@ -3,6 +3,7 @@
 </p>
 
 [![Gem Version](https://badge.fury.io/rb/lecter.svg)](https://badge.fury.io/rb/lecter)
+[![<ORG_NAME>](https://circleci.com/gh/Neodelf/lecter.svg?style=shield)](<LINK>)
 
 ## Table of contents
 * [:rotating_light: Problems](#rotating_light-problems)
