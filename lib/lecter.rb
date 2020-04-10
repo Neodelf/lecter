@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'lecter/formatter_payload'
 require 'lecter/version'
 require 'lecter/rack'
 
