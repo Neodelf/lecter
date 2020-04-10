@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'json'
+
 module Lecter
   class FormatterPayload
     attr_reader :result, :error_message
