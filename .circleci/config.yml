@@ -4,7 +4,7 @@ spec_steps: &spec_steps
   - checkout
   - attach_workspace:
       at: ~/project/tmp
-  - run: bundle install
+  - run: gem install bundler -v 2.1.2
   - run:
       name: Run specs
       command: |
