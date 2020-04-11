@@ -55,7 +55,7 @@ jobs:
     docker:
     - image: circleci/ruby:2.6.3
     environment:
-      CC_TEST_REPORTER_ID: 4417938970048334f96d30fbe72a28c2ded3027bdf23f05a0cf06a50807a7873
+      CC_TEST_REPORTER_ID: 9ef6750a0b374973f31c70ccf4bc6be1a4c93b0f2d3537d16e77450ef01f7813
     working_directory: ~/bikeindex/bike_index
 
     steps:
