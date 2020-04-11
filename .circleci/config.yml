@@ -1,44 +1,83 @@
 version: 2
-references:
-  rspec: &rspec
-    run:
-      name: Run test suite
-      command: bundle exec rspec
-  rubocop: &rubocop
-    run:
-      name: Run rubocop linter
-      command: bundle exec rubocop
-  restore: &restore
-    restore_cache:
-      keys:
-      - v1-dependencies-{{ checksum "Gemfile.lock" }}
-      # fallback to using the latest cache if no exact match is found
-      - v1-dependencies-
-  bundle: &bundle
-    run:
-      name: install dependencies
-      command: |
-        gem install bundler -v 2.1.2
-        bundle install --path vendor/bundle
-  save: &save
-    save_cache:
-      paths:
-      - ./vendor/bundle
-      key: v1-dependencies-{{ checksum "Gemfile.lock" }}
 jobs:
-  "ruby-2.6.3":
+  build:
+    working_directory: ~/bikeindex/bike_index
+    environment:
+      COVERAGE: true
     docker:
     - image: circleci/ruby:2.6.3
     steps:
     - checkout
-    - <<: *restore
-    - <<: *bundle
-    - <<: *save
-    - <<: *rspec
-    - <<: *rubocop
+    - restore_cache:
+        keys:
+        # This branch if available
+        - v2-dep-{{ .Branch }}-
+        # Default branch if not
+        - v2-dep-master-
+        # Any branch if there are none on the default branch - this should be unnecessary if you have your default branch configured correctly
+        - v2-dep-
+    - run:
+        name: Install Bundler
+        command: gem install bundler -v 2.1.2
+    - run:
+        name: Bundle Gems
+        command: bundle install --path=vendor/bundle --jobs=4 --retry=3
+    - run:
+        name: Install Code Climate Test Reporter
+        command: |
+          curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+          chmod +x ./cc-test-reporter
+    - save_cache:
+        key: v2-dep-{{ .Branch }}-{{ epoch }}
+        paths:
+        - ./vendor/bundle
+        - ~/.bundle
+    - run:
+        name: Run tests
+        command: |
+          ./cc-test-reporter before-build
+          TESTFILES=$(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
+          bundle exec rspec --profile 10 \
+                            --color \
+                            --order random \
+                            --format progress \
+                            -- ${TESTFILES}
+    - run:
+        name: Code Climate Test Coverage
+        command: |
+          ./cc-test-reporter format-coverage -t simplecov -o "coverage/codeclimate.$CIRCLE_NODE_INDEX.json"
+    - persist_to_workspace:
+        root: coverage
+        paths:
+        - codeclimate.*.json
+
+  upload-coverage:
+    docker:
+    - image: circleci/ruby:2.6.3
+    environment:
+      CC_TEST_REPORTER_ID: 9ef6750a0b374973f31c70ccf4bc6be1a4c93b0f2d3537d16e77450ef01f7813
+    working_directory: ~/bikeindex/bike_index
+
+    steps:
+    - attach_workspace:
+        at: ~/bikeindex/bike_index
+    - run:
+        name: Install Code Climate Test Reporter
+        command: |
+          curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+          chmod +x ./cc-test-reporter
+    - run:
+        name: Upload Test Reporter To Codeclimate
+        command: |
+          ./cc-test-reporter sum-coverage codeclimate.*.json --output codeclimate.total.json
+          ./cc-test-reporter upload-coverage --input codeclimate.total.json
 
 workflows:
   version: 2
-  build:
+
+  commit:
     jobs:
-    - "ruby-2.6.3"
+    - build
+    - upload-coverage:
+        requires:
+        - build
