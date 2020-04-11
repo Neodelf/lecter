@@ -25,6 +25,8 @@ references:
       paths:
       - ./vendor/bundle
       key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+  send-coverage-report:
+    - coverage-reporter/send_report
 jobs:
   "ruby-2.6.3":
     docker:
@@ -36,17 +38,10 @@ jobs:
     - <<: *save
     - <<: *rspec
     - <<: *rubocop
-  send-coverage-report:
-    steps:
-    - checkout
-    - "run commands to generate the coverage result"
-    - coverage-reporter/send_report
+    - <<: *send-coverage-report
 
 workflows:
   version: 2
   build:
     jobs:
     - "ruby-2.6.3"
-  coverage-example:
-    jobs:
-    - send-coverage-report
