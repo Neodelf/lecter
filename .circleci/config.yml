@@ -75,7 +75,7 @@ jobs:
     - run:
         name: Upload Test Reporter To Codeclimate
         command: |
-          ./cc-test-reporter sum-coverage codeclimate.*.json --parts 6 --output codeclimate.total.json
+          ./cc-test-reporter sum-coverage codeclimate.*.json --output codeclimate.total.json
           ./cc-test-reporter upload-coverage --input codeclimate.total.json
 
 workflows:
