@@ -2,6 +2,9 @@
 
 require 'bundler/setup'
 require 'lecter'
+require 'simplecov'
+
+SimpleCov.start
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
