@@ -37,17 +37,17 @@ references:
       key: v1-dependencies-{{ checksum "Gemfile.lock" }}
   code-coverage: &code-coverage
     run:
-      name: Setup Code Climate test-reporter
+      name: Install Code Climate Test Reporter
       command: |
-        # download test reporter as a static binary
         curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
         chmod +x ./cc-test-reporter
-        ./cc-test-reporter format-coverage -t simplecov -o "coverage/codeclimate.$CIRCLE_NODE_INDEX.json"
         ./cc-test-reporter sum-coverage --output - codeclimate.*.json | ./cc-test-reporter upload-coverage --debug --input -
 
 
 jobs:
   "all-in-one":
+    environment:
+      CC_TEST_REPORTER_ID: 4417938970048334f96d30fbe72a28c2ded3027bdf23f05a0cf06a50807a7873
     docker:
     - image: circleci/ruby:2.6.3
     steps:
@@ -58,36 +58,9 @@ jobs:
     - <<: *rspec
     - <<: *rubocop
     - <<: *code-coverage
-    - persist_to_workspace:
-      root: coverage
-      paths:
-      - codeclimate.*.json
-    - store_test_results:
-      path: test-results
-    - store_artifacts:
-      path: test-artifacts
-
-  "upload-coverage":
-    docker:
-    - image: circleci/ruby:2.6.3-stretch-node
-    environment:
-      CC_TEST_REPORTER_ID: 4417938970048334f96d30fbe72a28c2ded3027bdf23f05a0cf06a50807a7873
-    working_directory: ~/bikeindex/bike_index
-    steps:
-    - attach_workspace:
-        at: ~/bikeindex/bike_index
-    - run:
-        name: Install Code Climate Test Reporter
-        command: |
-          curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-          chmod +x ./cc-test-reporter
-    - run:
-        command: |
-          ./cc-test-reporter sum-coverage --output - codeclimate.*.json | ./cc-test-reporter upload-coverage --debug --input -
 
 workflows:
   version: 2
   build:
     jobs:
     - 'all-in-one'
-    - 'upload-coverage'
