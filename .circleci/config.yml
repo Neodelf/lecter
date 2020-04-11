@@ -3,17 +3,7 @@ references:
   rspec: &rspec
     run:
       name: Run test suite
-      command: |
-        mkdir -p test-results/rspec test-artifacts
-        ./cc-test-reporter before-build
-        TESTFILES=$(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
-        bundle exec rspec --profile 10 \
-                          --color \
-                          --order random \
-                          --format RspecJunitFormatter \
-                          --out test-results/rspec/rspec.xml \
-                          --format progress \
-                          -- ${TESTFILES}
+      command: bundle exec rspec
   rubocop: &rubocop
     run:
       name: Run rubocop linter
@@ -42,7 +32,6 @@ references:
         curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
         chmod +x ./cc-test-reporter
         ./cc-test-reporter sum-coverage --output - codeclimate.*.json | ./cc-test-reporter upload-coverage --debug --input -
-
 
 jobs:
   "all-in-one":
