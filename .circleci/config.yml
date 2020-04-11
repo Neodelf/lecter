@@ -1,10 +1,8 @@
 version: 2
 references:
   rspec: &rspec
-    - checkout
     - attach_workspace:
         at: ~/project/tmp
-    - run: bundle install
     - run:
         name: Run specs
         command: |
