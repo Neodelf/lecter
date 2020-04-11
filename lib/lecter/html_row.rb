@@ -6,37 +6,37 @@ module Lecter
     BACKGROUND_INCLUDED_ROW = '#4a4a4a'
     NEW_LINE_SYMBOL = "\n"
 
-    def initialize(file_row, file_row_index, file_includes_row, lines)
-      @file_row = file_row
-      @file_row_number = file_row_index
-      @file_includes_row = file_includes_row
-      @lines = lines
+    def initialize(row, row_number, row_executable, order_of_executed_lines)
+      @row = row
+      @row_number = row_number
+      @row_executable = row_executable
+      @order_of_executed_lines = order_of_executed_lines
     end
 
     def create
-      "<div style='#{style}'><code>#{html_row}</code></div>".html_safe
+      "<div style='#{style}'><code>#{html_row}</code></div>"
     end
 
     private
 
-    attr_reader :file_row, :file_row_number, :file_includes_row, :lines
+    attr_reader :row, :row_number, :row_executable, :order_of_executed_lines
 
     def html_row
-      [file_row_number, file_row, row_calling_order_number].join(' ') + NEW_LINE_SYMBOL
+      [row_number, row, row_calling_order_number].join(' ') + NEW_LINE_SYMBOL
     end
 
     def row_calling_order_number
-      return unless file_includes_row
+      return unless row_executable
 
-      ARROW + lines
+      ARROW + order_of_executed_lines
               .each_with_index
-              .select { |_, index| lines[index] == file_row_number }
+              .select { |_, index| order_of_executed_lines[index] == row_number }
               .map { |_, index| index + 1 }
               .join(', ')
     end
 
     def style
-      file_includes_row ? "background-color: #{BACKGROUND_INCLUDED_ROW};" : nil
+      row_executable ? "background-color: #{BACKGROUND_INCLUDED_ROW};" : nil
     end
   end
 end

@@ -6,7 +6,7 @@
       <% @file_listings.each_with_index do |file_listing, index| %>
         <li>
           <a href="#anchor<%= index %>">
-            <%= file_listing.file_name.split('/').last %>
+            <%= raw(file_listing.file_path.split('/').last) %>
           </a>
         </li>
       <% end %>
@@ -20,11 +20,11 @@
   <% @file_listings.each_with_index do |file_listing, index| %>
     <div class="filename" id="anchor<%=index%>">
       <div class="arrow-right"></div>
-      <div class="filename-title"><%= file_listing.file_name.remove(Rails.root.to_s) %></div>
+      <div class="filename-title"><%= file_listing.file_path.split('/').last %></div>
     </div>
     <div class="listing">
       <pre>
-        <code><% file_listing.html_rows.each do |html_row| %><%= html_row %><% end %></code>
+        <code><% file_listing.html_rows.each do |html_row| %><%= raw(html_row) %><% end %></code>
       </pre>
     </div>
   <% end %>

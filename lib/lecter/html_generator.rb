@@ -14,9 +14,8 @@ module Lecter
 
     def call
       @data.each_with_index.map do |item, _item_index|
-        @file_name = item.keys.first
-
-        @executable_row_numbers = item.values.split(' ').flatten.map(&:to_i)
+        @file_path = item.keys.first
+        @executable_row_numbers = item.values.flatten
         previous_row_is_empty = false
 
         html_rows = file_context.each_with_index.map do |file_row, file_row_index|
@@ -37,27 +36,33 @@ module Lecter
           end
         end
 
-        FileListing.new(file_name, html_rows)
+        FileListing.new(file_path, html_rows)
       end
     end
 
     private
 
-    attr_accessor :executable_row_numbers, :file_row_index, :file_name
+    attr_accessor :executable_row_numbers, :file_row_index, :file_path
 
     def file_row_in_showing_range?(_index)
       executable_row_numbers.reduce(false) do |memo, row_number|
-        memo || file_row_index.in?(
-          row_number - COUNT_LINES_AROUND_RUNNING_ROW - 1..
-            row_number + COUNT_LINES_AROUND_RUNNING_ROW - 1
-        )
+        memo ||
+          (row_number - COUNT_LINES_AROUND_RUNNING_ROW - 1..
+           row_number + COUNT_LINES_AROUND_RUNNING_ROW - 1).include?(file_row_index)
       end
     end
 
     def file_context
-      File.open(Rails.root.join(file_name), 'r').read.split(NEW_LINE)
+      File.open(file_path, 'r').read.split(NEW_LINE)
     end
   end
 
-  FileListing = Struct.new(:file_name, :html_rows)
+  class FileListing
+    attr_reader :file_path, :html_rows
+
+    def initialize(file_path, html_rows)
+      @file_path = file_path
+      @html_rows = html_rows
+    end
+  end
 end
