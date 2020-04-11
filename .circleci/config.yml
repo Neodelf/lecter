@@ -25,7 +25,7 @@ references:
       paths:
       - ./vendor/bundle
       key: v1-dependencies-{{ checksum "Gemfile.lock" }}
-  send-coverage-report:
+  send_coverage_report: &send_coverage_report
     - coverage-reporter/send_report
 jobs:
   "ruby-2.6.3":
@@ -38,7 +38,7 @@ jobs:
     - <<: *save
     - <<: *rspec
     - <<: *rubocop
-    - <<: *send-coverage-report
+    - <<: *send_coverage_report
 
 workflows:
   version: 2
