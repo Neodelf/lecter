@@ -1,44 +1,83 @@
 version: 2
 references:
   rspec: &rspec
-    run:
-      name: Run test suite
-      command: bundle exec rspec
+    - checkout
+    - attach_workspace:
+        at: ~/project/tmp
+    - run: bundle install
+    - run:
+        name: Run specs
+        command: |
+          ./tmp/cc-test-reporter before-build
+          COVERAGE=true bundle exec rake spec
+          ./tmp/cc-test-reporter format-coverage --output tmp/codeclimate.$CIRCLE_JOB.json
+    - persist_to_workspace:
+        root: tmp
+        paths:
+        - codeclimate.*.json
+
   rubocop: &rubocop
     run:
       name: Run rubocop linter
       command: bundle exec rubocop
+
   restore: &restore
     restore_cache:
       keys:
       - v1-dependencies-{{ checksum "Gemfile.lock" }}
       # fallback to using the latest cache if no exact match is found
       - v1-dependencies-
+
   bundle: &bundle
     run:
       name: Install dependencies
       command: |
         gem install bundler -v 2.1.2
         bundle install --path vendor/bundle
+
   save: &save
     save_cache:
       paths:
       - ./vendor/bundle
       key: v1-dependencies-{{ checksum "Gemfile.lock" }}
-  code-coverage: &code-coverage
-    run:
-      name: Install Code Climate Test Reporter
-      command: |
-        curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-        chmod +x ./cc-test-reporter
-        ./cc-test-reporter sum-coverage --output - codeclimate.*.json | ./cc-test-reporter upload-coverage --debug --input -
 
+  cc-setup:
+    docker:
+    - image: circleci/ruby
+    environment:
+      <<: *common_env
+    steps:
+    - run:
+        name: Download Code Climate test-reporter
+        command: |
+          mkdir -p tmp/
+          curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./tmp/cc-test-reporter
+          chmod +x ./tmp/cc-test-reporter
+    - persist_to_workspace:
+        root: tmp
+        paths:
+        - cc-test-reporter
+
+  # Job for merging code coverage results and sending them to Code Climate
+  cc-upload-coverage:
+    docker:
+    - image: circleci/ruby
+      environment:
+        CC_TEST_REPORTER_ID: 4417938970048334f96d30fbe72a28c2ded3027bdf23f05a0cf06a50807a7873
+    environment:
+      <<: *common_env
+    steps:
+    - attach_workspace:
+        at: ~/project/tmp
+    - run:
+        name: Upload coverage results to Code Climate
+        command: |
+          ./tmp/cc-test-reporter sum-coverage tmp/codeclimate.*.json --parts 6 --output tmp/codeclimate.total.json
+          ./tmp/cc-test-reporter upload-coverage --input tmp/codeclimate.total.json
 jobs:
   "all-in-one":
-    environment:
-      CC_TEST_REPORTER_ID: 4417938970048334f96d30fbe72a28c2ded3027bdf23f05a0cf06a50807a7873
     docker:
-    - image: circleci/ruby:2.6.3
+      - image: circleci/ruby:2.6.3
     steps:
     - checkout
     - <<: *restore
@@ -47,6 +86,7 @@ jobs:
     - <<: *rspec
     - <<: *rubocop
     - <<: *code-coverage
+
 
 workflows:
   version: 2
