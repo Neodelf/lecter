@@ -35,7 +35,7 @@ jobs:
     - run:
         name: Run tests
         command: |
-          mkdir -p test-results test-artifacts
+          mkdir -p test-results
           ./cc-test-reporter before-build
           TESTFILES=$(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
           bundle exec rspec --profile 10 \
@@ -54,8 +54,6 @@ jobs:
         - codeclimate.*.json
     - store_test_results:
         path: test-results
-    - store_artifacts:
-        path: test-artifacts
 
   upload-coverage:
     docker:
