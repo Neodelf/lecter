@@ -22,6 +22,11 @@ jobs:
     - run:
         name: Bundle Gems
         command: bundle install --path=vendor/bundle --jobs=4 --retry=3
+    - run:
+        name: Install Code Climate Test Reporter
+        command: |
+          curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+          chmod +x ./cc-test-reporter
     - save_cache:
         key: v2-dep-{{ .Branch }}-{{ epoch }}
         paths:
