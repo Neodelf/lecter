@@ -25,10 +25,15 @@ references:
       paths:
       - ./vendor/bundle
       key: v1-dependencies-{{ checksum "Gemfile.lock" }}
-  send_coverage_report: &send_coverage_report
-    - coverage-reporter/send_report
+  code-coverage: &code-coverage
+    run:
+      name: Setup Code Climate test-reporter
+      command: |
+        # download test reporter as a static binary
+        curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+        chmod +x ./cc-test-reporter
 jobs:
-  "ruby-2.6.3":
+  "all-in-one":
     docker:
     - image: circleci/ruby:2.6.3
     steps:
@@ -38,10 +43,10 @@ jobs:
     - <<: *save
     - <<: *rspec
     - <<: *rubocop
-    - <<: *send_coverage_report
+    - <<: *code-coverage
 
 workflows:
   version: 2
   build:
     jobs:
-    - "ruby-2.6.3"
+    - 'all-in-one'
