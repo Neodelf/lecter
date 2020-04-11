@@ -41,11 +41,9 @@ references:
       - ./vendor/bundle
       key: v1-dependencies-{{ checksum "Gemfile.lock" }}
 
-  cc-setup:
+  cc-setup: &cc-setup
     docker:
     - image: circleci/ruby
-    environment:
-      <<: *common_env
     steps:
     - run:
         name: Download Code Climate test-reporter
@@ -59,13 +57,11 @@ references:
         - cc-test-reporter
 
   # Job for merging code coverage results and sending them to Code Climate
-  cc-upload-coverage:
+  cc-upload-coverage: &cc-upload-coverage
     docker:
     - image: circleci/ruby
       environment:
         CC_TEST_REPORTER_ID: 4417938970048334f96d30fbe72a28c2ded3027bdf23f05a0cf06a50807a7873
-    environment:
-      <<: *common_env
     steps:
     - attach_workspace:
         at: ~/project/tmp
@@ -85,7 +81,8 @@ jobs:
     - <<: *save
     - <<: *rspec
     - <<: *rubocop
-    - <<: *code-coverage
+    - <<: *cc-setup
+    - <<: *cc-upload-coverage
 
 
 workflows:
