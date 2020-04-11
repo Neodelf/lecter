@@ -34,6 +34,8 @@ references:
         chmod +x ./cc-test-reporter
 jobs:
   "all-in-one":
+    environment:
+      CC_TEST_REPORTER_ID: 4417938970048334f96d30fbe72a28c2ded3027bdf23f05a0cf06a50807a7873
     docker:
     - image: circleci/ruby:2.6.3
     steps:
