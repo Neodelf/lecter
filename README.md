@@ -2,8 +2,8 @@
   <img src="https://github.com/Neodelf/staff/blob/master/lecter_web_with_text.png?raw=true" alt="Lecter Logo" width="866px"/>
 </p>
 
-[![Gem Version](https://badge.fury.io/rb/lecter.svg)](https://badge.fury.io/rb/lecter)
-[![<ORG_NAME>](https://circleci.com/gh/Neodelf/lecter.svg?style=shield)](<LINK>)
+[![Gem Version][0]][1]
+[![CircleCI][2]][3]
 
 ## Table of contents
 * [:rotating_light: Problems](#rotating_light-problems)
@@ -31,8 +31,8 @@ You don't have to work with debuggers, read and remember many lines of code.<br>
 Just **give&receive**!
 
 ## :loudspeaker: Prerequisites
-Please **use a multithreading server** such as a [puma](https://github.com/puma/puma) with more than `1` workers.<br>
-More information about how to tune puma server please follow the [link](https://github.com/puma/puma#clustered-mode).
+Please **use a multithreading server** such as a [puma][4] with more than `1` workers.<br>
+More information about how to tune puma server please follow the [link][5].
 
 ## :hammer_and_wrench: Installing
 Installing is a **very simple** process.
@@ -57,7 +57,7 @@ Installing is a **very simple** process.
     ```ruby
     Rails.application.config.assets.precompile += %w(lecter.css lecter.js)
     ```
-    More information about it and how to do it please follow the [ruby on rails' guide](https://guides.rubyonrails.org/asset_pipeline.html#precompiling-assets).
+    More information about it and how to do it please follow the [ruby on rails' guide][6].
 
 4. **Add** routes to your `config/routes.rb`:
     ```ruby
@@ -97,9 +97,20 @@ There is an example with **POST** method:
 
 ## :heart: Contributing
 1. Bug reports and pull requests **are welcome**.
-2. There are many issues as a proposal to improve this library. If you have any ideas please **feel free** to write your thoughts in a [new issue](https://github.com/Neodelf/lecter/issues/new).
-3. Choose **what you like** to fix or improve on the [issues list](https://github.com/Neodelf/lecter/issues). You can ask any questions in the comments.
+2. There are many issues as a proposal to improve this library. If you have any ideas please **feel free** to write your thoughts in a [new issue][7].
+3. Choose **what you like** to fix or improve on the [issues list][8]. You can ask any questions in the comments.
 4. :bangbang: **Mention of each contributor** will be on the README file. 
 
 ## :card_file_box: License
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+The gem is available as open source under the terms of the [MIT License][9].
+
+[0]: https://badge.fury.io/rb/lecter.svg
+[1]: https://badge.fury.io/rb/lecter
+[2]: https://circleci.com/gh/Neodelf/lecter.svg?style=shield
+[3]: https://circleci.com/gh/neodelf/lecter
+[4]: https://github.com/puma/puma
+[5]: https://github.com/puma/puma#clustered-mode
+[6]: https://guides.rubyonrails.org/asset_pipeline.html#precompiling-assets
+[7]: https://github.com/Neodelf/lecter/issues/new
+[8]: https://github.com/Neodelf/lecter/issues
+[9]: https://opensource.org/licenses/MIT
