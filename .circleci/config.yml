@@ -91,5 +91,3 @@ workflows:
     jobs:
     - 'all-in-one'
     - 'upload-coverage'
-      requires:
-        - 'all-in-one'
