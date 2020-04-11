@@ -28,13 +28,37 @@ references:
       paths:
       - ./vendor/bundle
       key: v1-dependencies-{{ checksum "Gemfile.lock" }}
-  code-coverage: &code-coverage
-    run:
-      name: Setup Code Climate test-reporter
-      command: |
-        # download test reporter as a static binary
-        curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-        chmod +x ./cc-test-reporter
+
+  cc-setup: &:cc-setup
+    docker:
+    - image: circleci/ruby
+    steps:
+    - run:
+        name: Download Code Climate test-reporter
+        command: |
+          mkdir -p tmp/
+          curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./tmp/cc-test-reporter
+          chmod +x ./tmp/cc-test-reporter
+    - persist_to_workspace:
+        root: tmp
+        paths:
+        - cc-test-reporter
+
+  cc-upload-coverage: &:cc-upload-coverage
+    docker:
+    - image: circleci/ruby
+      environment:
+        CC_TEST_REPORTER_ID: a11b66bfbb1acdf220d5cb317b2e945a986fd85adebe29a76d411ad6d74ec31f
+    environment:
+      <<: *common_env
+    steps:
+    - attach_workspace:
+        at: ~/project/tmp
+    - run:
+        name: Upload coverage results to Code Climate
+        command: |
+          ./tmp/cc-test-reporter sum-coverage tmp/codeclimate.*.json --parts 6 --output tmp/codeclimate.total.json
+          ./tmp/cc-test-reporter upload-coverage --input tmp/codeclimate.total.json
 jobs:
   "all-in-one":
     environment:
@@ -46,12 +70,15 @@ jobs:
     - <<: *restore
     - <<: *bundle
     - <<: *save
-    - <<: *rspec
     - <<: *rubocop
-    - <<: *code-coverage
+    - <<: *cc-setup
+    - <<: *rspec
+    - <<: *cc-upload-coverage
 
 workflows:
   version: 2
   build:
     jobs:
-    - 'all-in-one'
+    - 'all-in-one':
+      requires:
+        - cc-setup
