@@ -29,7 +29,21 @@ references:
       - ./vendor/bundle
       key: v1-dependencies-{{ checksum "Gemfile.lock" }}
 
-  cc-setup: &:cc-setup
+jobs:
+  "all-in-one":
+    environment:
+      CC_TEST_REPORTER_ID: 4417938970048334f96d30fbe72a28c2ded3027bdf23f05a0cf06a50807a7873
+    docker:
+    - image: circleci/ruby:2.6.3
+    steps:
+    - checkout
+    - <<: *restore
+    - <<: *bundle
+    - <<: *save
+    - <<: *rubocop
+    - <<: *rspec
+
+  cc-setup:
     docker:
     - image: circleci/ruby
     steps:
@@ -44,7 +58,7 @@ references:
         paths:
         - cc-test-reporter
 
-  cc-upload-coverage: &:cc-upload-coverage
+  cc-upload-coverage:
     docker:
     - image: circleci/ruby
       environment:
@@ -59,26 +73,12 @@ references:
         command: |
           ./tmp/cc-test-reporter sum-coverage tmp/codeclimate.*.json --parts 6 --output tmp/codeclimate.total.json
           ./tmp/cc-test-reporter upload-coverage --input tmp/codeclimate.total.json
-jobs:
-  "all-in-one":
-    environment:
-      CC_TEST_REPORTER_ID: 4417938970048334f96d30fbe72a28c2ded3027bdf23f05a0cf06a50807a7873
-    docker:
-    - image: circleci/ruby:2.6.3
-    steps:
-    - checkout
-    - <<: *restore
-    - <<: *bundle
-    - <<: *save
-    - <<: *rubocop
-    - <<: *cc-setup
-    - <<: *rspec
-    - <<: *cc-upload-coverage
 
 workflows:
   version: 2
   build:
     jobs:
-    - 'all-in-one':
-      requires:
-        - cc-setup
+      - cc-setup
+      - 'all-in-one':
+        requires:
+          - cc-setup
