@@ -17,10 +17,10 @@ jobs:
         # Any branch if there are none on the default branch - this should be unnecessary if you have your default branch configured correctly
         - v2-dep-
     - run:
-        name: install bundler
+        name: Install Bundler
         command: gem install bundler -v 2.1.2
     - run:
-        name: bundle gems
+        name: Bundle Gems
         command: bundle install --path=vendor/bundle --jobs=4 --retry=3
     - run:
         name: Install Code Climate Test Reporter
@@ -68,11 +68,7 @@ jobs:
     - attach_workspace:
         at: ~/bikeindex/bike_index
     - run:
-        name: Install Code Climate Test Reporter
-        command: |
-          curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-          chmod +x ./cc-test-reporter
-    - run:
+        name: Upload Test Reporter To Codeclimate
         command: |
           ./cc-test-reporter sum-coverage --output - codeclimate.*.json | ./cc-test-reporter upload-coverage --debug --input -
 
