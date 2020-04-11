@@ -4,6 +4,8 @@
 
 [![Gem Version][0]][1]
 [![CircleCI][2]][3]
+[![Test Coverage][12]][13]
+[![Maintainability][10]][11]
 
 ## Table of contents
 * [:rotating_light: Problems](#rotating_light-problems)
@@ -114,3 +116,7 @@ The gem is available as open source under the terms of the [MIT License][9].
 [7]: https://github.com/Neodelf/lecter/issues/new
 [8]: https://github.com/Neodelf/lecter/issues
 [9]: https://opensource.org/licenses/MIT
+[10]: https://api.codeclimate.com/v1/badges/45d57f439d66990490f1/maintainability
+[11]: https://codeclimate.com/github/Neodelf/lecter/maintainability
+[12]: https://api.codeclimate.com/v1/badges/45d57f439d66990490f1/test_coverage
+[13]: https://codeclimate.com/github/Neodelf/lecter/test_coverage
