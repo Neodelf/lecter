@@ -5,7 +5,7 @@ jobs:
     environment:
       COVERAGE: true
     docker:
-    - image: circleci/ruby:2.5.1-stretch-node
+    - image: circleci/ruby:2.6.3
     steps:
     - checkout
     - restore_cache:
@@ -60,7 +60,7 @@ jobs:
 
   upload-coverage:
     docker:
-    - image: circleci/ruby:2.6.3-stretch-node
+    - image: circleci/ruby:2.6.3
     environment:
       CC_TEST_REPORTER_ID: 4417938970048334f96d30fbe72a28c2ded3027bdf23f05a0cf06a50807a7873
     working_directory: ~/bikeindex/bike_index
