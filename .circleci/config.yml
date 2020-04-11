@@ -1,18 +1,18 @@
 version: 2
 references:
   rspec: &rspec
-    - attach_workspace:
-        at: ~/project/tmp
-    - run:
-        name: Run specs
-        command: |
-          ./tmp/cc-test-reporter before-build
-          COVERAGE=true bundle exec rake spec
-          ./tmp/cc-test-reporter format-coverage --output tmp/codeclimate.$CIRCLE_JOB.json
-    - persist_to_workspace:
-        root: tmp
-        paths:
-        - codeclimate.*.json
+    attach_workspace:
+      at: ~/project/tmp
+    run:
+      name: Run specs
+      command: |
+        ./tmp/cc-test-reporter before-build
+        COVERAGE=true bundle exec rake spec
+        ./tmp/cc-test-reporter format-coverage --output tmp/codeclimate.$CIRCLE_JOB.json
+    persist_to_workspace:
+      root: tmp
+      paths:
+      - codeclimate.*.json
 
   rubocop: &rubocop
     run:
