@@ -17,3 +17,8 @@ Style/HashTransformKeys:
   Enabled: true
 Style/HashTransformValues:
   Enabled: true
+Metrics/BlockLength:
+  ExcludedMethods: ['describe', 'context']
+Layout/ArrayAlignment:
+  EnforcedStyle: with_fixed_indentation
+  IndentationWidth: 2
