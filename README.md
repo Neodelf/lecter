@@ -88,14 +88,12 @@ There is an example with **POST** method:
     `params` - `"post"=>{"title"=>"New title", "description"=>"Desciption"}`<br>
     `method` - `POST`
 
-    <img src="https://raw.githubusercontent.com/neodelf/staff/master/lecter_post_form.png" alt="lecter_example_form"/>
+    <img src="https://raw.githubusercontent.com/Neodelf/staff/master/lecter_post_12_04.png" alt="lecter example post form" title="Example Lecter POST request form" height="350px" />
 
 3. **Submit** form
 4. **Receive** result
 
-    <p align="center">
-        <img src="https://raw.githubusercontent.com/neodelf/staff/master/lecter_post_result.png" alt="lecter_example_result"/>
-    </p>
+    <img src="https://raw.githubusercontent.com/Neodelf/staff/master/lecter_post_result_12_04.png" alt="lecter post form result" title="Example Lecter POST request result"/>
 
 ## :heart: Contributing
 1. Bug reports and pull requests **are welcome**.
