@@ -7,6 +7,8 @@
 [![Test Coverage][12]][13]
 [![Maintainability][10]][11]
 
+[<img width="200" src="https://github.com/Neodelf/staff/blob/master/evrone-sponsored-logo.png?raw=true" alt="Evrone Logo"/>][14]
+
 ## Table of contents
 * [:rotating_light: Problems](#rotating_light-problems)
 * [:rocket: Solution](#rocket-solution)
@@ -118,3 +120,4 @@ The gem is available as open source under the terms of the [MIT License][9].
 [11]: https://codeclimate.com/github/Neodelf/lecter/maintainability
 [12]: https://api.codeclimate.com/v1/badges/45d57f439d66990490f1/test_coverage
 [13]: https://codeclimate.com/github/Neodelf/lecter/test_coverage
+[14]: https://evrone.com
