@@ -1,5 +1,3 @@
-<img align="right" width="200" src="https://github.com/Neodelf/staff/blob/master/evrone-sponsored-logo.png?raw=true" alt="Evrone Logo"/>
-
 <p align="center">
   <img src="https://github.com/Neodelf/staff/blob/master/lecter_web_with_text.png?raw=true" alt="Lecter Logo" width="866px"/>
 </p>
@@ -8,6 +6,8 @@
 [![CircleCI][2]][3]
 [![Test Coverage][12]][13]
 [![Maintainability][10]][11]
+
+[<img width="200" src="https://github.com/Neodelf/staff/blob/master/evrone-sponsored-logo.png?raw=true" alt="Evrone Logo"/>][14]
 
 ## Table of contents
 * [:rotating_light: Problems](#rotating_light-problems)
