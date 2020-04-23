@@ -29,13 +29,13 @@ module Lecter
 
     def prepare_lines
       items.each do |item|
-        file, unknown_variable = item.split(' ')
-        unknown_variable = unknown_variable.to_i
+        file, line_number = item.split(' ')
+        line_number = line_number.to_i
 
         if line_belongs_to_last?(file)
-          lines.last[file] = lines.last[file] << unknown_variable
+          lines.last[file] = lines.last[file] << line_number
         else
-          lines << { file.to_s => [unknown_variable] }
+          lines << { file.to_s => [line_number] }
         end
       end
     end
@@ -49,7 +49,7 @@ module Lecter
     end
 
     def items
-      @items ||= response.body[3..-1].split(';')
+      @items ||= response.body[4..-1].split(';')
     end
 
     def line_belongs_to_last?(file)
