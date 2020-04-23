@@ -1,10 +1,5 @@
 # frozen_string_literal: true
 
-require 'rest-client'
-require 'lecter/requester'
-require 'lecter/formatter_payload'
-require 'lecter/html_generator'
-
 module Lecter
   class DiagnosisController < ActionController::Base
     layout 'lecter'

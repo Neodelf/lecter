@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'lecter/html_row'
-
 module Lecter
   class HtmlGenerator
     COUNT_LINES_AROUND_RUNNING_ROW = 5
