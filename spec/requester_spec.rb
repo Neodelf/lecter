@@ -15,18 +15,18 @@ RSpec.describe Lecter::Requester do
     before do
       response = instance_double(
         RestClient::Response,
-        body: "302\
-absolute_path_to_app/app/controllers/posts_controller.rb 26 PostsController create call;\
-absolute_path_to_app/app/controllers/posts_controller.rb 27 PostsController create line;\
-absolute_path_to_app/app/controllers/posts_controller.rb 71 PostsController post_params call;\
-absolute_path_to_app/app/controllers/posts_controller.rb 72 PostsController post_params line;\
-absolute_path_to_app/app/controllers/posts_controller.rb 73 PostsController post_params return;\
+        body: "\
+302/absolute_path_to_app/app/controllers/posts_controller.rb 26 PostsController create call;\
+/absolute_path_to_app/app/controllers/posts_controller.rb 27 PostsController create line;\
+/absolute_path_to_app/app/controllers/posts_controller.rb 71 PostsController post_params call;\
+/absolute_path_to_app/app/controllers/posts_controller.rb 72 PostsController post_params line;/\
+absolute_path_to_app/app/controllers/posts_controller.rb 73 PostsController post_params return;/\
 absolute_path_to_app/app/controllers/posts_controller.rb 29 PostsController create line;\
-absolute_path_to_app/app/controllers/posts_controller.rb 30 PostsController create line;\
-absolute_path_to_app/app/controllers/posts_controller.rb 31 PostsController create line;\
-absolute_path_to_app/app/controllers/posts_controller.rb 32 PostsController create line;\
-absolute_path_to_app/app/controllers/posts_controller.rb 31 PostsController create line;\
-absolute_path_to_app/app/controllers/posts_controller.rb 38 PostsController create return;".to_json
+/absolute_path_to_app/app/controllers/posts_controller.rb 30 PostsController create line;\
+/absolute_path_to_app/app/controllers/posts_controller.rb 31 PostsController create line;\
+/absolute_path_to_app/app/controllers/posts_controller.rb 32 PostsController create line;\
+/absolute_path_to_app/app/controllers/posts_controller.rb 31 PostsController create line;\
+/absolute_path_to_app/app/controllers/posts_controller.rb 38 PostsController create return;"
       )
       allow(RestClient::Request).to receive(:execute).and_return(response)
       subject
@@ -36,12 +36,9 @@ absolute_path_to_app/app/controllers/posts_controller.rb 38 PostsController crea
       expect(instance.lines).to eq(
         [
           {
-            'absolute_path_to_app/app/controllers/posts_controller.rb' =>
+            '/absolute_path_to_app/app/controllers/posts_controller.rb' =>
               [26, 27, 71, 72, 73, 29, 30, 31, 32, 31, 38]
-          },
-          # rubocop:disable Style/StringLiterals
-          { "\"" => [0] }
-          # rubocop:enable Style/StringLiterals
+          }
         ]
       )
     end
