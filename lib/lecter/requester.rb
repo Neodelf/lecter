@@ -49,7 +49,7 @@ module Lecter
     end
 
     def items
-      @items ||= response.body[4..-1].split(';')
+      @items ||= response.body[3..-1].split(';')
     end
 
     def line_belongs_to_last?(file)
