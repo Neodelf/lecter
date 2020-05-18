@@ -1,0 +1,26 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "pineapplethief",
+      "name": "Aleksey Glukhov",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/4012690?v=4",
+      "profile": "https://github.com/pineapplethief",
+      "contributions": [
+        "code",
+        "doc",
+        "maintenance"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "lecter",
+  "projectOwner": "Neodelf",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
