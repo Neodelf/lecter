@@ -1,7 +1,4 @@
 <p align="center">
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
   <img src="https://github.com/Neodelf/staff/blob/master/lecter_web_with_text.png?raw=true" alt="Lecter Logo" width="866px"/>
 </p>
 
@@ -9,6 +6,7 @@
 [![CircleCI][2]][3]
 [![Test Coverage][12]][13]
 [![Maintainability][10]][11]
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
 
 [<img width="200" src="https://github.com/Neodelf/staff/blob/master/evrone-sponsored-logo.png?raw=true" alt="Evrone Logo"/>][14]
 
@@ -106,6 +104,30 @@ There is an example with **POST** method:
 3. Choose **what you like** to fix or improve on the [issues list][8]. You can ask any questions in the comments.
 4. :bangbang: **Mention of each contributor** will be on the README file.
 
+### ✨ Contributors 
+
+**Thanks** goes to these wonderful people:
+
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/pineapplethief">
+        <img src="https://avatars1.githubusercontent.com/u/4012690?v=4" width="100px;" alt=""/>
+        <br />
+        <sub><b>Aleksey Glukhov</b></sub>
+      </a>
+      <br />
+      <a href="https://github.com/Neodelf/lecter/commits?author=pineapplethief" title="Code">💻</a>
+      <a href="https://github.com/Neodelf/lecter/commits?author=pineapplethief" title="Documentation">📖</a>
+    </td>
+  </tr>
+</table>
+
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
+
 ## :card_file_box: License
 The gem is available as open source under the terms of the [MIT License][9].
 
@@ -124,22 +146,3 @@ The gem is available as open source under the terms of the [MIT License][9].
 [12]: https://api.codeclimate.com/v1/badges/45d57f439d66990490f1/test_coverage
 [13]: https://codeclimate.com/github/Neodelf/lecter/test_coverage
 [14]: https://evrone.com
-
-## Contributors ✨
-
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-  <tr>
-    <td align="center"><a href="https://github.com/pineapplethief"><img src="https://avatars1.githubusercontent.com/u/4012690?v=4" width="100px;" alt=""/><br /><sub><b>Aleksey Glukhov</b></sub></a><br /><a href="https://github.com/Neodelf/lecter/commits?author=pineapplethief" title="Code">💻</a> <a href="https://github.com/Neodelf/lecter/commits?author=pineapplethief" title="Documentation">📖</a> <a href="#maintenance-pineapplethief" title="Maintenance">🚧</a></td>
-  </tr>
-</table>
-
-<!-- markdownlint-enable -->
-<!-- prettier-ignore-end -->
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
