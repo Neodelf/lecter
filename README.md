@@ -17,7 +17,7 @@
 * [:hammer_and_wrench: Installing](#hammer_and_wrench-installing)
 * [:joystick: Using](#joystick-using)
 * [:man_technologist: Example of using](#man_technologist-example-of-using)
-* [:heart: Contributing](#heart-contributing--contributors)
+* [:heart: Contributing & Contributors](#heart-contributing--contributors)
 * [:card_file_box: License](#card_file_box-license)
 
 ## :rotating_light: Problems
