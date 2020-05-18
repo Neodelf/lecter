@@ -17,7 +17,7 @@
 * [:hammer_and_wrench: Installing](#hammer_and_wrench-installing)
 * [:joystick: Using](#joystick-using)
 * [:man_technologist: Example of using](#man_technologist-example-of-using)
-* [:heart: Contributing](#heart-contributing)
+* [:heart: Contributing](#heart-contributing--contributors)
 * [:card_file_box: License](#card_file_box-license)
 
 ## :rotating_light: Problems
@@ -98,13 +98,11 @@ There is an example with **POST** method:
 
     <img src="https://raw.githubusercontent.com/Neodelf/staff/master/lecter_post_result_12_04.png" alt="lecter post form result" title="Example Lecter POST request result"/>
 
-## :heart: Contributing
+## :heart: Contributing & Contributors
 1. Bug reports and pull requests **are welcome**.
 2. There are many issues as a proposal to improve this library. If you have any ideas please **feel free** to write your thoughts in a [new issue][7].
 3. Choose **what you like** to fix or improve on the [issues list][8]. You can ask any questions in the comments.
 4. :bangbang: **Mention of each contributor** will be on the README file.
-
-### ✨ Contributors 
 
 **Thanks** goes to these wonderful people:
 
@@ -124,7 +122,6 @@ There is an example with **POST** method:
     </td>
   </tr>
 </table>
-
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
 
