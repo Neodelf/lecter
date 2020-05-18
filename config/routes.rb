@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
 Lecter::Engine.routes.draw do
-  resource :diagnosis, only: %i[show create new], controller: :diagnosis
+  get '/', to: 'diagnosis#show'
+  get '/new', to: 'diagnosis#new'
+  post '/', to: 'diagnosis#create'
 end

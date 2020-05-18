@@ -29,7 +29,7 @@ The main purpose of that gem is **to help developers to understand which code ex
 
 Gem's work could be compared with visiting a doctor:
 You give symptoms of your disease and **receive a diagnosis**.<br>
-You give parameters of a request and **receive executable code**. 
+You give parameters of a request and **receive executable code**.
 
 You don't have to work with debuggers, read and remember many lines of code.<br>
 Just **give&receive**!
@@ -57,7 +57,7 @@ Installing is a **very simple** process.
 
 3. **Precompile** assets<br>
     Add `lecter.css lecter.js` to your `config/initializers/assets.rb` like this:
- 
+
     ```ruby
     Rails.application.config.assets.precompile += %w(lecter.css lecter.js)
     ```
@@ -71,7 +71,7 @@ Installing is a **very simple** process.
 ## :joystick: Using
 You should do **two** simple steps:
 
-1. **Go** to `/lecter/diagnosis/new`
+1. **Go** to `/lecter/new`
 
 2. **Fill in** form fields with request parameters:
 
@@ -101,7 +101,7 @@ There is an example with **POST** method:
 1. Bug reports and pull requests **are welcome**.
 2. There are many issues as a proposal to improve this library. If you have any ideas please **feel free** to write your thoughts in a [new issue][7].
 3. Choose **what you like** to fix or improve on the [issues list][8]. You can ask any questions in the comments.
-4. :bangbang: **Mention of each contributor** will be on the README file. 
+4. :bangbang: **Mention of each contributor** will be on the README file.
 
 ## :card_file_box: License
 The gem is available as open source under the terms of the [MIT License][9].

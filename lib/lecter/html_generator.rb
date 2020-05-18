@@ -11,7 +11,7 @@ module Lecter
     end
 
     def call
-      @data.each_with_index.map do |item, _item_index|
+      @data.each.map do |item|
         @file_path = item.keys.first
         @executable_row_numbers = item.values.flatten
         previous_row_is_empty = false
