@@ -10,8 +10,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Neodelf']
   spec.email         = ['neodelf@gmail.com']
 
-  spec.summary       = 'Write a short summary, because RubyGems requires one.'
-  spec.description   = 'Write a longer description or delete this line.'
+  spec.summary       = 'Show executable code by request.'
+  spec.description   = 'The main purpose of that gem is helping developers to understand which code executes by request.<br>'
   spec.homepage      = 'https://github.com/neodelf/lecter'
   spec.license       = 'MIT'
 
