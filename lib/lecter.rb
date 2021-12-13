@@ -10,3 +10,8 @@ require 'lecter/requester'
 require 'lecter/version'
 
 require 'rest-client'
+
+module Lecter
+  AVAILABLE_METHODS = %w[GET].freeze
+  DEFAULT_METHOD = 'GET'
+end

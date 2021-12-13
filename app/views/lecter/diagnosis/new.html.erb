@@ -14,7 +14,7 @@
   <% end %>
   <p>
     <%= label_tag t('.method') %>
-    <%= select_tag :method, options_for_select(%w[GET POST PUT PATCH DELETE], 'GET') %>
+    <%= select_tag :method, options_for_select(Lecter::AVAILABLE_METHODS, Lecter::DEFAULT_METHOD) %>
   </p>
   <%= submit_tag t('.create') %>
 <% end %>

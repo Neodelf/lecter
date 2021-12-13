@@ -11,7 +11,8 @@ Gem::Specification.new do |spec|
   spec.email         = ['neodelf@gmail.com']
 
   spec.summary       = 'Show executable code by request.'
-  spec.description   = 'The main purpose of that gem is helping developers to understand which code executes by request.<br>'
+  spec.description   = 'The main purpose of that gem is helping developers to understand which '\
+                       'code executes by request.<br>'
   spec.homepage      = 'https://github.com/neodelf/lecter'
   spec.license       = 'MIT'
 
