@@ -12,6 +12,6 @@ require 'lecter/version'
 require 'rest-client'
 
 module Lecter
-  AVAILABLE_METHODS = %w[GET].freeze
+  AVAILABLE_METHODS = %w[GET POST PUT PATCH DELETE].freeze
   DEFAULT_METHOD = 'GET'
 end
