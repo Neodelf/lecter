@@ -2,6 +2,8 @@
 
 module Lecter
   class Requester
+    WRONG_URL_MSG = 'Wrong url'
+
     attr_reader :lines, :error_message
 
     def initialize(params)
@@ -16,7 +18,7 @@ module Lecter
 
       prepare_lines
     rescue URI::InvalidURIError
-      @error_message = 'Wrong url'
+      @error_message = WRONG_URL_MSG
       false
     rescue RestClient::ExceptionWithResponse => e
       @error_message = e.message

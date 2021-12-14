@@ -13,8 +13,8 @@ module Lecter
         thread[:items] = ''
         tp = TracePoint.new(:line, :class, :call, :c_call, :return) do |trace_point|
           if trace_point.path &&
-             !trace_point.path.include?('/app/views') &&
-             !trace_point.path.include?('/app/helpers') &&
+             trace_point.path.exclude?('/app/views') &&
+             trace_point.path.exclude?('/app/helpers') &&
              trace_point.path.include?(Rails.root.to_s) &&
              trace_point.method_id != :method_added &&
              trace_point.defined_class != Module &&
