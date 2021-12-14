@@ -6,12 +6,14 @@
   <% flash.each do |key, value| %>
     <%= value %>
   <% end %>
-  <% %i[endpoint params].each do |attr|  %>
-    <p>
-      <%= label_tag t(".#{attr}") %>
-      <%= text_field_tag attr %>
-    </p>
-  <% end %>
+  <p>
+    <%= label_tag t('.endpoint') %>
+    <%= text_field_tag :endpoint %>
+  </p>
+  <p>
+    <%= label_tag t('.params') %>
+    <%= text_area_tag :params %>
+  </p>
   <p>
     <%= label_tag t('.method') %>
     <%= select_tag :method, options_for_select(Lecter::AVAILABLE_METHODS, Lecter::DEFAULT_METHOD) %>

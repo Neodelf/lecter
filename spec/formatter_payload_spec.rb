@@ -10,7 +10,7 @@ RSpec.describe Lecter::FormatterPayload, type: :service do
   it 'returns hash' do
     is_expected.to eq(
       {
-        lecter_analysis: true,
+        lecter_enabled: true,
         'post' => { 'description' => 'Desciption', 'title' => 'New title' }
       }
     )
@@ -20,7 +20,7 @@ RSpec.describe Lecter::FormatterPayload, type: :service do
     let(:payload) { '' }
 
     it 'returns hash' do
-      is_expected.to eq({ lecter_analysis: true })
+      is_expected.to eq({ lecter_enabled: true })
     end
   end
 end

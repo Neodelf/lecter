@@ -2,6 +2,7 @@ AllCops:
   Exclude:
   - 'lib/lecter/html_generator.rb'
   - 'lib/lecter/rack.rb'
+  - 'lib/lecter/trace_point.rb'
   - 'vendor/**/*'
 Documentation:
   Enabled: false

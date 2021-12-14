@@ -3,10 +3,10 @@
 require 'spec_helper'
 
 RSpec.describe Lecter::Requester do
-  let(:specific_parameter) { { lecter_analysis: true } }
+  let(:specific_parameter) { { lecter_enabled: true } }
   let(:url) { 'localhost:3009/posts' }
   let(:payload) { { 'post' => { 'title' => 'New title', 'description' => 'New description' } } }
-  let(:params) { { method: :anything, url: url, payload: payload, lecter_analysis: true } }
+  let(:params) { { method: :anything, url: url, payload: payload, lecter_enabled: true } }
   let(:instance) { described_class.new(params) }
 
   subject { instance.call }
