@@ -4,6 +4,7 @@ require 'json'
 
 module Lecter
   class FormatterPayload
+    WRONG_PARAMETERS_MSG = 'Wrong parameters'
     attr_reader :result, :error_message
 
     def initialize(payload)
@@ -13,7 +14,7 @@ module Lecter
     def call
       @result = json_parse(dirty_payload).merge(lecter_analysis_parameter)
     rescue JSON::ParserError
-      @error_message = 'Wrong parameters'
+      @error_message = WRONG_PARAMETERS_MSG
       false
     end
 
