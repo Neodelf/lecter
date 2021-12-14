@@ -43,11 +43,13 @@ More information about how to tune puma server please follow the [link][5].
 ## :hammer_and_wrench: Installing
 Installing is a **very simple** process.
 
-1. **Add** that gem to your Gemfile:
+1. **Add** the gem to your Gemfile:
 
     ```ruby
     group :development do
-      gem 'lecter'
+      git 'https://github.com/neodelf/lecter.git', branch: 'master' do
+        gem 'lecter'
+      end
     end
     ```
 
