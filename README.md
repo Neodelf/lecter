@@ -3,6 +3,7 @@
 </p>
 
 [![Gem Version][0]][1]
+[![Ruby Style Guide][15]][16]
 [![CircleCI][2]][3]
 [![Test Coverage][12]][13]
 [![Maintainability][10]][11]
@@ -143,3 +144,6 @@ The gem is available as open source under the terms of the [MIT License][9].
 [12]: https://api.codeclimate.com/v1/badges/45d57f439d66990490f1/test_coverage
 [13]: https://codeclimate.com/github/Neodelf/lecter/test_coverage
 [14]: https://evrone.com
+[15]: https://img.shields.io/badge/code_style-rubocop-brightgreen.svg
+[16]: https://rubystyle.guide
+
