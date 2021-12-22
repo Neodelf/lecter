@@ -129,7 +129,6 @@ The gem is available as open source under the terms of the [MIT License][9].
 [3]: https://circleci.com/gh/neodelf/lecter
 [4]: https://github.com/puma/puma
 [5]: https://github.com/puma/puma#clustered-mode
-[6]: https://guides.rubyonrails.org/asset_pipeline.html#precompiling-assets
 [7]: https://github.com/Neodelf/lecter/issues/new
 [8]: https://github.com/Neodelf/lecter/issues
 [9]: https://opensource.org/licenses/MIT
