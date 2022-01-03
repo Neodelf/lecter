@@ -25,7 +25,7 @@ module Lecter
     private
 
     def diagnosis_params
-      params.permit(:endpoint, :params, :method)
+      params.permit(:endpoint, :body_raw, :method)
     end
 
     def requester_params
@@ -44,7 +44,7 @@ module Lecter
     end
 
     def formatter_payload
-      @formatter_payload ||= Lecter::FormatterPayload.new(diagnosis_params[:params])
+      @formatter_payload ||= Lecter::FormatterPayload.new(diagnosis_params[:body_raw])
     end
   end
 end

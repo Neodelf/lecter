@@ -23,31 +23,29 @@
   <h4>
     <%= t('.response_status', status: @response_status) %>
   </h4>
-  <% @file_listings.each_with_index do |file_listing, index| %>
-    <div class="filename" id="anchor<%=index%>">
-      <div class="arrow-right"></div>
-      <div class="filename-title"><%= file_listing.file_path.split('/').last %></div>
-    </div>
-    <div class="listing">
-      <pre>
-        <code><% file_listing.html_rows.each do |html_row| %><%= raw(html_row) %><% end %></code>
-      </pre>
-    </div>
-  <% end %>
+  <div class="accordion" id="accordionExample">
+    <% @file_listings.each_with_index do |file_listing, index| %>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            <div class="arrow-right"></div>
+            <%= file_listing.file_path.split('/').last %>
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            <pre>
+              <code><% file_listing.html_rows.each do |html_row| %><%= raw(html_row) %><% end %></code>
+            </pre>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
 
 <%= javascript_tag do %>
   $(document).ready(function(){
-  hljs.initHighlighting();
-
-  $('.filename').on('click', function(){
-      $(this).find('.arrow-right').toggleClass('down')
-      $(this).next().slideToggle();
-    });
-
-    $('.sidebar-wrapper > ul > li > a').on('click', function(){
-      var anchor = $(this).first().attr('href').split('#').pop();
-      $('.filename#'+anchor).click();
-    });
+    hljs.initHighlighting();
   })
 <% end %>

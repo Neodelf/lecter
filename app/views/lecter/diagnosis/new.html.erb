@@ -4,19 +4,29 @@
 
 <%= form_tag diagnosis_path do %>
   <% flash.each do |key, value| %>
-    <%= value %>
+    <div class="col-sm-2 col-form-label">
+      <%= value %>
+    </div>
   <% end %>
-  <p>
-    <%= label_tag t('.endpoint') %>
-    <%= text_field_tag :endpoint %>
+  <div class="row my-3">
+    <%= label_tag t('.method'), nil, class: 'col-sm-2 col-form-label' %>
+    <div class="col-sm-10">
+      <%= select_tag :method, options_for_select(Lecter::AVAILABLE_METHODS, Lecter::DEFAULT_METHOD) %>
+    </div>
+  </div>
+  <div class="row my-3">
+    <%= label_tag t('.endpoint'), nil, class: 'col-sm-2 col-form-label' %>
+    <div class="col-sm-10">
+      <%= text_field_tag :endpoint, nil, class: 'form-control', placeholder: 'Endpoint' %>
+    </div>
+  </div>
+  <div class="row my-3">
+    <%= label_tag t('.body_raw'), nil, class: 'col-sm-2 col-form-label' %>
+    <div class="col-sm-10">
+      <%= text_area_tag :body_raw, nil, rows: 10, class: 'form-control', placeholder: 'Body(raw)' %>
+    </div>
+  </div>
+
   </p>
-  <p>
-    <%= label_tag t('.params') %>
-    <%= text_area_tag :params %>
-  </p>
-  <p>
-    <%= label_tag t('.method') %>
-    <%= select_tag :method, options_for_select(Lecter::AVAILABLE_METHODS, Lecter::DEFAULT_METHOD) %>
-  </p>
-  <%= submit_tag t('.create') %>
+  <%= submit_tag t('.send'), class: 'btn btn-primary' %>
 <% end %>

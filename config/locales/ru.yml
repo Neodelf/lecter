@@ -10,6 +10,6 @@ ru:
       new:
         title: 'Новый диагноз'
         endpoint: 'Абсолютный путь'
-        params: 'Параметры'
+        body_raw: 'Тело запроса'
         method: 'HTTP метод'
-        create: 'Создать'
+        send: 'Послать запрос'

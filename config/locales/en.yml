@@ -10,6 +10,6 @@ en:
       new:
         title: 'New diagnosis'
         endpoint: 'Endpoint'
-        params: 'Parameters'
+        body_raw: 'Body (raw)'
         method: 'HTTP method'
-        create: 'Create'
+        send: 'Send request'

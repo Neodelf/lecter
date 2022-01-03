@@ -2,6 +2,8 @@
   <head>
     <title><%= yield(:title) %></title>
     <%= javascript_include_tag '//code.jquery.com/jquery-1.12.4.js', '//code.jquery.com/ui/1.12.1/jquery-ui.js' %>
+    <%= javascript_include_tag 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js' %>
+    <%= stylesheet_link_tag 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' %>
   </head>
 
   <style>
@@ -107,7 +109,6 @@
     }
 
     /* diagnosis/show.slim */
-
 
     .arrow-right {
         width: 0;
@@ -258,7 +259,7 @@
     }
   </style>
 
-  <body>
+  <body class="container">
     <div class="nav">
       <div class="nav-inner">
         <ul>
