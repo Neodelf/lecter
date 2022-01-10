@@ -67,13 +67,13 @@ Installing is a **very simple** process.
 ## :joystick: Using
 You should do **two** simple steps:
 
-1. **Go** to `/lecter/new`
+1. **Go** to `/lecter/diagnosis/new`
 
 2. **Fill in** form fields with request parameters:
 
-    `endpoint` - use absolute route like `localhost:3000/blogs`<br>
-    `params` - request's parameters<br>
-    `method` - request's method
+    `HTTP method` - request's method<br>
+    `Endpoint` - use absolute route like `localhost:3000/blogs`<br>
+    `Body(raw)` - request's parameters
 
 ## :man_technologist: Example of using
 There is an example with **POST** method:
