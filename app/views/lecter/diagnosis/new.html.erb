@@ -1,6 +1,8 @@
 <%= content_for :title, t('.title')  %>
 
-<h1><%= t('.title') %></h1>
+<div class="container">
+  <h2><%= t('.title') %></h2>
+</div>
 
 <%= form_tag diagnosis_path do %>
   <% flash.each do |key, value| %>

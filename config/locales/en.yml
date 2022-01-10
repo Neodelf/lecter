@@ -6,7 +6,7 @@ en:
     diagnosis:
       show:
         title: 'Diagnosis results'
-        response_status: 'Response status: %{status}'
+        executed_code: 'Executed code:'
       new:
         title: 'New diagnosis'
         endpoint: 'Endpoint'
