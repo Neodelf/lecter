@@ -78,20 +78,20 @@ You should do **two** simple steps:
 ## :man_technologist: Example of using
 There is an example with **POST** method:
 
-1. **Go** to `localhost:3000`
+1. **Go** to `localhost:3000/lecter/diagnosis/new`
 
 2. **Fill** form with:
 
-    `endpoint` - `localhost:3000/posts`<br>
-    `params` - `"post"=>{"title"=>"New title", "description"=>"Desciption"}`<br>
-    `method` - `POST`
+    `HTTP method` - `POST`<br>
+    `Endpoint` - `localhost:3000/posts`<br>
+    `Body(raw)` - `"post"=>{"title"=>"New title", "description"=>"Desciption"}`
 
-    <img src="https://raw.githubusercontent.com/Neodelf/staff/master/lecter_post_12_04.png" alt="lecter example post form" title="Example Lecter POST request form" height="350px" />
+    <img src="https://raw.githubusercontent.com/Neodelf/staff/master/lecter-post-form.png" alt="lecter example post form" title="Example Lecter POST request form" height="350px" />
 
 3. **Submit** form
 4. **Receive** result
 
-    <img src="https://raw.githubusercontent.com/Neodelf/staff/master/lecter_post_result_12_04.png" alt="lecter post form result" title="Example Lecter POST request result"/>
+    <img src="https://raw.githubusercontent.com/Neodelf/staff/master/lecter-post-result.png" alt="lecter post form result" title="Example Lecter POST request result"/>
 
 ## :heart: Contributing & Contributors
 1. Bug reports and pull requests **are welcome**.
