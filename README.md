@@ -27,13 +27,13 @@
 3. Memorize many lines of code is **difficult**.
 
 ## :rocket: Solution
-The main purpose of that gem is **to help developers to understand which code executes** by request.<br>
+1. The main purpose of that gem is **to help developers to understand which code executes** by request.<br>
 
-Gem's work could be compared with visiting a doctor:
+2. Gem's work could be compared with visiting a doctor:
 You give symptoms of your disease and **receive a diagnosis**.<br>
 You give parameters of a request and **receive executable code**.
 
-You don't have to work with debuggers, read and remember many lines of code.<br>
+3. You don't have to work with debuggers, read and remember many lines of code.<br>
 Just **give&receive**!
 
 ## :loudspeaker: Prerequisites
