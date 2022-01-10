@@ -14,7 +14,7 @@
 ## Table of contents
 * [:rotating_light: Problems](#rotating_light-problems)
 * [:rocket: Solution](#rocket-solution)
-* [:loudspeaker: Prerequisites](#loudspeaker-prerequisites)
+* [:bangbang: Requirements](#bangbang-requirements)
 * [:hammer_and_wrench: Installing](#hammer_and_wrench-installing)
 * [:joystick: Using](#joystick-using)
 * [:man_technologist: Example of using](#man_technologist-example-of-using)
@@ -36,7 +36,7 @@ You give parameters of a request and **receive executable code**.
 3. You don't have to work with debuggers, read and remember many lines of code.<br>
 Just **give&receive**!
 
-## :loudspeaker: Prerequisites
+## :bangbang: Requirements
 Please **use a multithreading server** such as a [puma][4] with more than `1` workers.<br>
 More information about how to tune puma server please follow the [link][5].
 
