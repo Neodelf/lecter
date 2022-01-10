@@ -2,33 +2,51 @@
 
 <div class="container">
   <h2><%= t('.title') %></h2>
+
+  <%= form_tag diagnosis_path do %>
+    <% flash.each do |key, value| %>
+      <div class="col-sm-2 col-form-label">
+        <%= value %>
+      </div>
+    <% end %>
+    <div class="row my-3">
+      <%= label_tag t('.method'), nil, class: 'col-sm-2 col-form-label' %>
+      <div class="col-sm">
+        <%= select_tag :method, options_for_select(Lecter::AVAILABLE_METHODS, Lecter::DEFAULT_METHOD) %>
+      </div>
+      <div class="col-sm gray">
+        Choose one
+      </div>
+    </div>
+    <div class="row my-3">
+      <%= label_tag t('.endpoint'), nil, class: 'col-sm-2 col-form-label' %>
+      <div class="col-sm">
+        <%= text_field_tag :endpoint, nil, class: 'form-control', placeholder: 'Endpoint' %>
+      </div>
+      <div class="col-sm gray">
+        localhost:3000/posts
+      </div>
+    </div>
+    <div class="row my-3">
+      <%= label_tag t('.body_raw'), nil, class: 'col-sm-2 col-form-label' %>
+      <div class="col-sm">
+        <%= text_area_tag :body_raw, nil, rows: 10, class: 'form-control', placeholder: 'Body(raw)' %>
+      </div>
+      <div class="col-sm gray">
+        "post" => {
+          "title" => "New title",
+          "description" => "Desciption"
+        }
+      </div>
+    </div>
+
+    </p>
+    <%= submit_tag t('.send'), class: 'btn btn-primary' %>
+  <% end %>
 </div>
 
-<%= form_tag diagnosis_path do %>
-  <% flash.each do |key, value| %>
-    <div class="col-sm-2 col-form-label">
-      <%= value %>
-    </div>
-  <% end %>
-  <div class="row my-3">
-    <%= label_tag t('.method'), nil, class: 'col-sm-2 col-form-label' %>
-    <div class="col-sm-10">
-      <%= select_tag :method, options_for_select(Lecter::AVAILABLE_METHODS, Lecter::DEFAULT_METHOD) %>
-    </div>
-  </div>
-  <div class="row my-3">
-    <%= label_tag t('.endpoint'), nil, class: 'col-sm-2 col-form-label' %>
-    <div class="col-sm-10">
-      <%= text_field_tag :endpoint, nil, class: 'form-control', placeholder: 'Endpoint' %>
-    </div>
-  </div>
-  <div class="row my-3">
-    <%= label_tag t('.body_raw'), nil, class: 'col-sm-2 col-form-label' %>
-    <div class="col-sm-10">
-      <%= text_area_tag :body_raw, nil, rows: 10, class: 'form-control', placeholder: 'Body(raw)' %>
-    </div>
-  </div>
-
-  </p>
-  <%= submit_tag t('.send'), class: 'btn btn-primary' %>
-<% end %>
+<style>
+  .gray {
+      color: #727a82
+  }
+</style>
