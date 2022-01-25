@@ -13,34 +13,34 @@
 
 ## Table of contents
 * [:rotating_light: Problems](#rotating_light-problems)
-* [:rocket: Solution](#rocket-solution)
+* [:rocket: Solutions](#rocket-solution)
 * [:bangbang: Requirements](#bangbang-requirements)
-* [:hammer_and_wrench: Installing](#hammer_and_wrench-installing)
-* [:joystick: Using](#joystick-using)
-* [:man_technologist: Example of using](#man_technologist-example-of-using)
+* [:hammer_and_wrench: Installation](#hammer_and_wrench-installing)
+* [:joystick: Usage](#joystick-using)
+* [:man_technologist: Examples](#man_technologist-example-of-using)
 * [:heart: Contributing & Contributors](#heart-contributing--contributors)
 * [:card_file_box: License](#card_file_box-license)
 
 ## :rotating_light: Problems
 1. Developers **don't know** how their app works.
 2. Reading code is a **long** process.
-3. Memorize many lines of code is **difficult**.
+3. Memorizing many lines of code is **difficult**.
 
-## :rocket: Solution
-1. The main purpose of that gem is **to help developers to understand which code executes** by request.<br>
+## :rocket: Solutions
+1. The main purpose of this gem is **to help developers understand which code is executed** by a request.<br>
 
-2. Gem's work could be compared with visiting a doctor:
-You give symptoms of your disease and **receive a diagnosis**.<br>
-You give parameters of a request and **receive executable code**.
+2. Gem's purpose could be compared to visiting a doctor:
+You give the symptoms of your disease and **receive a diagnosis**.<br>
+You give the parameters of a request and **receive executable code**.
 
 3. You don't have to work with debuggers, read and remember many lines of code.<br>
-Just **give&receive**!
+Just **give & receive**!
 
 ## :bangbang: Requirements
-Please **use a multithreading server** such as a [puma][4] with more than `1` workers.<br>
-More information about how to tune puma server please follow the [link][5].
+Please **use a multithreading server** such as a [puma][4] server with more than `1` worker.<br>
+For more information about how to tune a puma server, please visit this [link][5].
 
-## :hammer_and_wrench: Installing
+## :hammer_and_wrench: Installation
 Installing is a **very simple** process.
 
 1. **Add** the gem to your Gemfile:
@@ -53,7 +53,7 @@ Installing is a **very simple** process.
     end
     ```
 
-2. **Execute** in a terminal in app's directory:
+2. **Execute** in a terminal in your app's directory:
 
     ```zsh
     bundle install
@@ -64,23 +64,23 @@ Installing is a **very simple** process.
     mount Lecter::Engine => '/lecter'
     ```
 
-## :joystick: Using
-You should do **two** simple steps:
+## :joystick: Usage
+Follow **two** simple steps:
 
 1. **Go** to `/lecter/diagnosis/new`
 
-2. **Fill in** form fields with request parameters:
+2. **Fill in** the form fields with request parameters:
 
     `HTTP method` - request's method<br>
     `Endpoint` - use absolute route like `localhost:3000/blogs`<br>
     `Body(raw)` - request's parameters
 
-## :man_technologist: Example of using
-There is an example with **POST** method:
+## :man_technologist: Examples
+Here is an example with a **POST** request:
 
 1. **Go** to `localhost:3000/lecter/diagnosis/new`
 
-2. **Fill** form with:
+2. **Fill** in the form with:
 
     `HTTP method` - `POST`<br>
     `Endpoint` - `localhost:3000/posts`<br>
@@ -88,14 +88,14 @@ There is an example with **POST** method:
 
     <img src="https://raw.githubusercontent.com/Neodelf/staff/master/lecter-post-form.png" alt="lecter example post form" title="Example Lecter POST request form" height="350px" />
 
-3. **Submit** form
-4. **Receive** result
+3. **Submit** the form
+4. **Review** the result
 
     <img src="https://raw.githubusercontent.com/Neodelf/staff/master/lecter-post-result.png" alt="lecter post form result" title="Example Lecter POST request result"/>
 
 ## :heart: Contributing & Contributors
 1. Bug reports and pull requests **are welcome**.
-2. There are many issues as a proposal to improve this library. If you have any ideas please **feel free** to write your thoughts in a [new issue][7].
+2. There are many issues as a proposal to improve this library. If you have any ideas, please **feel free** to write your thoughts in a [new issue][7].
 3. Choose **what you like** to fix or improve on the [issues list][8]. You can ask any questions in the comments.
 4. :bangbang: **Mention of each contributor** will be on the README file.
 
