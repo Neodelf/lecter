@@ -61,7 +61,7 @@ Installing is a **very simple** process.
 
 3. **Add** routes to your `config/routes.rb`:
     ```ruby
-    mount Lecter::Engine => '/lecter'
+    mount Lecter::Engine => '/lecter' if Rails.env.development?
     ```
 
 ## :joystick: Usage
