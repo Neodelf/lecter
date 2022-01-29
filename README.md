@@ -7,7 +7,7 @@
 [![CircleCI][2]][3]
 [![Test Coverage][12]][13]
 [![Maintainability][10]][11]
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-4-green.svg)](#contributors-)
 
 [<img width="200" src="https://github.com/Neodelf/staff/blob/master/evrone-sponsored-logo.png?raw=true" alt="Evrone Logo"/>][14]
 
