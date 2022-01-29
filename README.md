@@ -47,9 +47,7 @@ Installing is a **very simple** process.
 
     ```ruby
     group :development do
-      git 'https://github.com/neodelf/lecter.git', branch: 'master' do
-        gem 'lecter'
-      end
+      gem 'lecter', github: 'neodelf/lecter'
     end
     ```
 
@@ -123,6 +121,15 @@ Here is an example with a **POST** request:
       </a>
       <br />
       <a href="https://github.com/Neodelf/lecter/commits?author=atayl16" title="Documentation">📖</a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/gambala">
+        <img src="https://avatars.githubusercontent.com/u/2563426?v=4" width="100px;" alt=""/>
+        <br />
+        <sub><b>Vitaliy Emeliyantsev</b></sub>
+      </a>
+      <br />
+      <a href="https://github.com/Neodelf/lecter/commits?author=gambala" title="Documentation">📖</a>
     </td>
   </tr>
 </table>
