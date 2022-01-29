@@ -20,11 +20,11 @@
 
 ## Table of contents
 * [:rotating_light: Problems](#rotating_light-problems)
-* [:rocket: Solutions](#rocket-solution)
+* [:rocket: Solutions](#rocket-solutions)
 * [:bangbang: Requirements](#bangbang-requirements)
-* [:hammer_and_wrench: Installation](#hammer_and_wrench-installing)
-* [:joystick: Usage](#joystick-using)
-* [:man_technologist: Examples](#man_technologist-example-of-using)
+* [:hammer_and_wrench: Installation](#hammer_and_wrench-installation)
+* [:joystick: Usage](#joystick-usage)
+* [:man_technologist: Examples](#man_technologist-examples)
 * [:heart: Sponsors](#card_file_box-license)
 * [:desktop_computer: Contributing & Contributors](#desktop_computer-contributing--contributors)
 * [:card_file_box: License](#card_file_box-license)
