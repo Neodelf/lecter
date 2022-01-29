@@ -2,6 +2,8 @@
   <img src="https://github.com/Neodelf/staff/blob/master/lecter_web_with_text.png?raw=true" alt="Lecter Logo" width="866px"/>
 </p>
 
+----------
+
 [![Gem Version][0]][1]
 [![Ruby Style Guide][15]][16]
 [![CircleCI][2]][3]
@@ -9,7 +11,12 @@
 [![Maintainability][10]][11]
 [![All Contributors](https://img.shields.io/badge/all_contributors-4-green.svg)](#contributors-)
 
-[<img width="200" src="https://github.com/Neodelf/staff/blob/master/evrone-sponsored-logo.png?raw=true" alt="Evrone Logo"/>][14]
+> Quid pro quo. I tell you things, you tell me things. Not about this case, though. About yourself. <br/>
+> -- Hannibal Lecter / The Silence of the Lambs
+
+#### Lecter shows an executed code by a URL request. Debug an unknown code in SECONDS!
+
+----------
 
 ## Table of contents
 * [:rotating_light: Problems](#rotating_light-problems)
@@ -18,7 +25,8 @@
 * [:hammer_and_wrench: Installation](#hammer_and_wrench-installing)
 * [:joystick: Usage](#joystick-using)
 * [:man_technologist: Examples](#man_technologist-example-of-using)
-* [:heart: Contributing & Contributors](#heart-contributing--contributors)
+* [:heart: Sponsors](#card_file_box-license)
+* [:desktop_computer: Contributing & Contributors](#desktop_computer-contributing--contributors)
 * [:card_file_box: License](#card_file_box-license)
 
 ## :rotating_light: Problems
@@ -91,7 +99,10 @@ Here is an example with a **POST** request:
 
     <img src="https://raw.githubusercontent.com/Neodelf/staff/master/lecter-post-result.png" alt="lecter post form result" title="Example Lecter POST request result" />
 
-## :heart: Contributing & Contributors
+## :heart: Sponsors
+[<img width="200" src="https://github.com/Neodelf/staff/blob/master/evrone-sponsored-logo.png?raw=true" alt="Evrone Logo"/>][14]
+
+## :desktop_computer: Contributing & Contributors
 1. Bug reports and pull requests **are welcome**.
 2. There are many issues as a proposal to improve this library. If you have any ideas, please **feel free** to write your thoughts in a [new issue][7].
 3. Choose **what you like** to fix or improve on the [issues list][8]. You can ask any questions in the comments.
