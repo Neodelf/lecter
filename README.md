@@ -47,9 +47,7 @@ Installing is a **very simple** process.
 
     ```ruby
     group :development do
-      git 'https://github.com/neodelf/lecter.git', branch: 'master' do
-        gem 'lecter'
-      end
+      gem 'lecter', github: 'neodelf/lecter'
     end
     ```
 
