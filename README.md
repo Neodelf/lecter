@@ -84,12 +84,12 @@ Here is an example with a **POST** request:
     `Endpoint` - `localhost:3000/posts`<br>
     `Body(raw)` - `"post"=>{"title"=>"New title", "description"=>"Desciption"}`
 
-    <img src="https://raw.githubusercontent.com/Neodelf/staff/master/lecter-post-form.png" alt="lecter example post form" title="Example Lecter POST request form" height="350px" />
+    <img src="https://raw.githubusercontent.com/Neodelf/staff/master/lecter-post-form.png" alt="lecter example post form" title="Example Lecter POST request form" />
 
 3. **Submit** the form
 4. **Review** the result
 
-    <img src="https://raw.githubusercontent.com/Neodelf/staff/master/lecter-post-result.png" alt="lecter post form result" title="Example Lecter POST request result"/>
+    <img src="https://raw.githubusercontent.com/Neodelf/staff/master/lecter-post-result.png" alt="lecter post form result" title="Example Lecter POST request result" />
 
 ## :heart: Contributing & Contributors
 1. Bug reports and pull requests **are welcome**.
