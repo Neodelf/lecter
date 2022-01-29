@@ -4,7 +4,6 @@
   <h1 color="#98793a">Lecter shows an executed code by a URL request. <br/>
     Debug an unknown code in SECONDS!
   </h1>
-  ----------
 
   [![Gem Version][0]][1]
   [![Ruby Style Guide][15]][16]
