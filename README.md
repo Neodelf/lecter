@@ -1,20 +1,21 @@
-<p align="center">
+<div align="center">
   <img src="https://github.com/Neodelf/staff/blob/master/lecter_web_with_text.png?raw=true" alt="Lecter Logo" width="866px"/>
-</p>
 
-----------
+  <h1 color="#98793a">Lecter shows an executed code by a URL request. <br/>
+    Debug an unknown code in SECONDS!
+  </h1>
+  ----------
 
-[![Gem Version][0]][1]
-[![Ruby Style Guide][15]][16]
-[![CircleCI][2]][3]
-[![Test Coverage][12]][13]
-[![Maintainability][10]][11]
-[![All Contributors](https://img.shields.io/badge/all_contributors-4-green.svg)](#contributors-)
+  [![Gem Version][0]][1]
+  [![Ruby Style Guide][15]][16]
+  [![CircleCI][2]][3]
+  [![Test Coverage][12]][13]
+  [![Maintainability][10]][11]
+  [![All Contributors](https://img.shields.io/badge/all_contributors-4-green.svg)](#contributors-)
+</div>
 
 > Quid pro quo. I tell you things, you tell me things. Not about this case, though. About yourself. <br/>
 > -- Hannibal Lecter / The Silence of the Lambs
-
-#### Lecter shows an executed code by a URL request. Debug an unknown code in SECONDS!
 
 ----------
 
@@ -38,11 +39,11 @@
 1. The main purpose of this gem is **to help developers understand which code is executed** by a request.<br>
 
 2. Gem's purpose could be compared to visiting a doctor:
-You give the symptoms of your disease and **receive a diagnosis**.<br>
-You give the parameters of a request and **receive executable code**.
+   You give the symptoms of your disease and **receive a diagnosis**.<br>
+   You give the parameters of a request and **receive executable code**.
 
 3. You don't have to work with debuggers, read and remember many lines of code.<br>
-Just **give & receive**!
+   Just **give & receive**!
 
 ## :bangbang: Requirements
 Please **use a multithreading server** such as a [puma][4] server with more than `1` worker.<br>
@@ -77,9 +78,9 @@ Follow **two** simple steps:
 
 2. **Fill in** the form fields with request parameters:
 
-    `HTTP method` - request's method<br>
-    `Endpoint` - use absolute route like `localhost:3000/blogs`<br>
-    `Body(raw)` - request's parameters
+   `HTTP method` - request's method<br>
+   `Endpoint` - use absolute route like `localhost:3000/blogs`<br>
+   `Body(raw)` - request's parameters
 
 ## :man_technologist: Examples
 Here is an example with a **POST** request:
@@ -88,9 +89,9 @@ Here is an example with a **POST** request:
 
 2. **Fill** in the form with:
 
-    `HTTP method` - `POST`<br>
-    `Endpoint` - `localhost:3000/posts`<br>
-    `Body(raw)` - `"post"=>{"title"=>"New title", "description"=>"Desciption"}`
+   `HTTP method` - `POST`<br>
+   `Endpoint` - `localhost:3000/posts`<br>
+   `Body(raw)` - `"post"=>{"title"=>"New title", "description"=>"Desciption"}`
 
     <img src="https://raw.githubusercontent.com/Neodelf/staff/master/lecter-post-form.png" alt="lecter example post form" title="Example Lecter POST request form" />
 
@@ -166,4 +167,3 @@ The gem is available as open source under the terms of the [MIT License][9].
 [14]: https://evrone.com
 [15]: https://img.shields.io/badge/code_style-rubocop-brightgreen.svg
 [16]: https://rubystyle.guide
-
