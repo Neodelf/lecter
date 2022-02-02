@@ -10,7 +10,7 @@ require 'lecter/requester'
 require 'lecter/version'
 require 'lecter/trace_point'
 
-require 'rest-client'
+require 'http'
 
 module Lecter
   AVAILABLE_METHODS = %w[GET POST PUT PATCH DELETE].freeze

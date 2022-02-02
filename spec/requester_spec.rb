@@ -6,7 +6,7 @@ RSpec.describe Lecter::Requester do
   let(:specific_parameter) { { lecter_enabled: true } }
   let(:url) { 'localhost:3009/posts' }
   let(:payload) { { 'post' => { 'title' => 'New title', 'description' => 'New description' } } }
-  let(:params) { { method: :anything, url: url, payload: payload, lecter_enabled: true } }
+  let(:params) { { method: :get, url: url, payload: payload, lecter_enabled: true } }
   let(:instance) { described_class.new(params) }
 
   subject { instance.call }
@@ -14,7 +14,7 @@ RSpec.describe Lecter::Requester do
   context 'if all params are valid' do
     before do
       response = instance_double(
-        RestClient::Response,
+        HTTP::Response,
         body: "\
 302/absolute_path_to_app/app/controllers/posts_controller.rb 26 PostsController create call;\
 /absolute_path_to_app/app/controllers/posts_controller.rb 27 PostsController create line;\
@@ -28,7 +28,7 @@ absolute_path_to_app/app/controllers/posts_controller.rb 29 PostsController crea
 /absolute_path_to_app/app/controllers/posts_controller.rb 31 PostsController create line;\
 /absolute_path_to_app/app/controllers/posts_controller.rb 38 PostsController create return;"
       )
-      allow(RestClient::Request).to receive(:execute).and_return(response)
+      allow(HTTP).to receive(:get).and_return(response)
       subject
     end
 
@@ -44,10 +44,10 @@ absolute_path_to_app/app/controllers/posts_controller.rb 29 PostsController crea
     end
   end
 
-  [RestClient::ExceptionWithResponse, URI::InvalidURIError].each do |error|
+  [HTTP::RequestError, URI::InvalidURIError].each do |error|
     context "if raise #{error}" do
       before do
-        allow(RestClient::Request).to receive(:execute).and_raise(error)
+        allow(HTTP).to receive(:get).and_raise(error)
       end
 
       it 'returns false' do
