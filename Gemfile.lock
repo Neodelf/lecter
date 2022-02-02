@@ -3,7 +3,7 @@ PATH
   specs:
     lecter (0.1.6)
       rest-client
-      simplecov
+      simplecov (= 0.17.1)
 
 GEM
   remote: https://rubygems.org/
