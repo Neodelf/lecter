@@ -142,6 +142,15 @@ Here is an example with a **POST** request:
       <br />
       <a href="https://github.com/Neodelf/lecter/commits?author=gambala" title="Documentation">📖</a>
     </td>
+    <td align="center">
+      <a href="https://github.com/oskaror">
+        <img src="https://avatars.githubusercontent.com/u/12644040?v=4" width="100px;" alt=""/>
+        <br />
+        <sub><b>Oskar Janusz</b></sub>
+      </a>
+      <br />
+      <a href="https://github.com/Neodelf/lecter/commits?author=oskaror" title="Code">💻</a>
+    </td>
   </tr>
 </table>
 <!-- markdownlint-enable -->
