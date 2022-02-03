@@ -15,6 +15,15 @@
         "doc",
         "maintenance"
       ]
+    },
+    {
+      "login": "oskaror",
+      "name": "Oskar Janusz",
+      "avatar_url": "https://avatars.githubusercontent.com/u/12644040?v=4",
+      "profile": "https://github.com/oskaror",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
