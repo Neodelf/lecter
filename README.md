@@ -10,7 +10,7 @@
   [![CircleCI][2]][3]
   [![Test Coverage][12]][13]
   [![Maintainability][10]][11]
-  [![All Contributors](https://img.shields.io/badge/all_contributors-4-green.svg)](#contributors-)
+  [![All Contributors](https://img.shields.io/badge/all_contributors-5-green.svg)](#contributors-)
 </div>
 
 > Quid pro quo. I tell you things, you tell me things. Not about this case, though. About yourself. <br/>
