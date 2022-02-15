@@ -73,7 +73,7 @@ Installing is a **very simple** process.
 ## :joystick: Usage
 Follow **two** simple steps:
 
-1. **Go** to `/lecter/diagnosis/new`
+1. **Go** to `/lecter`
 
 2. **Fill in** the form fields with request parameters:
 
@@ -84,7 +84,7 @@ Follow **two** simple steps:
 ## :man_technologist: Examples
 Here is an example with a **POST** request:
 
-1. **Go** to `localhost:3000/lecter/diagnosis/new`
+1. **Go** to `localhost:3000/lecter`
 
 2. **Fill** in the form with:
 
