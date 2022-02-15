@@ -54,9 +54,7 @@ Installing is a **very simple** process.
 1. **Add** the gem to your Gemfile:
 
     ```ruby
-    group :development do
-      gem 'lecter', github: 'neodelf/lecter'
-    end
+    gem 'lecter'
     ```
 
 2. **Execute** in a terminal in your app's directory:
