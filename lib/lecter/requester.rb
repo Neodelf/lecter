@@ -11,6 +11,7 @@ module Lecter
       @url = params[:url]
       @payload = params[:payload]
       @lines = []
+      @headers = params[:headers]
     end
 
     def call
@@ -27,7 +28,7 @@ module Lecter
 
     private
 
-    attr_accessor :method, :url, :payload
+    attr_accessor :method, :url, :payload, :headers
 
     def prepare_lines
       items.each do |item|
@@ -46,7 +47,8 @@ module Lecter
       @response ||= RestClient::Request.execute(
         method: method,
         url: url,
-        payload: payload
+        payload: payload,
+        headers: headers
       )
     end
 

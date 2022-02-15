@@ -13,3 +13,4 @@ en:
         body_raw: 'Body (raw)'
         method: 'HTTP method'
         send: 'Send request'
+        headers: 'Headers'

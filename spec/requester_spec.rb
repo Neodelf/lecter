@@ -6,7 +6,10 @@ RSpec.describe Lecter::Requester do
   let(:specific_parameter) { { lecter_enabled: true } }
   let(:url) { 'localhost:3009/posts' }
   let(:payload) { { 'post' => { 'title' => 'New title', 'description' => 'New description' } } }
-  let(:params) { { method: :anything, url: url, payload: payload, lecter_enabled: true } }
+  let(:headers) { { content_type: 'text/html', accept: '*/*' } }
+  let(:params) do
+    { method: :anything, url: url, payload: payload, lecter_enabled: true, headers: headers }
+  end
   let(:instance) { described_class.new(params) }
 
   subject { instance.call }
