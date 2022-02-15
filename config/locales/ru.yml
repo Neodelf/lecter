@@ -13,3 +13,4 @@ ru:
         body_raw: 'Тело запроса'
         method: 'HTTP метод'
         send: 'Послать запрос'
+        headers: 'Заголовки'

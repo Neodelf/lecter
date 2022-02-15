@@ -3,7 +3,7 @@
 module Lecter
   class DiagnosisController < ActionController::Base
     layout 'lecter'
-    before_action :format_payload, only: :create
+    before_action :format_request_data, only: :create
 
     def new; end
 
@@ -25,26 +25,32 @@ module Lecter
     private
 
     def diagnosis_params
-      params.permit(:endpoint, :body_raw, :method)
+      params.permit(:endpoint, :body_raw, :method, :headers)
     end
 
     def requester_params
       {
         method: diagnosis_params[:method].downcase.to_sym,
         url: diagnosis_params[:endpoint],
-        payload: formatter_payload.result
+        payload: formatter_payload.result,
+        headers: formatted_headers.result
       }
     end
 
-    def format_payload
-      return if formatter_payload.call
+    def format_request_data
+      formatters = [formatter_payload, formatted_headers]
+      return if formatters.all?(&:call)
 
-      flash[:error] = formatter_payload.error_message
+      flash[:error] = formatters.map(&:error_message).join(', ')
       render :new
     end
 
     def formatter_payload
       @formatter_payload ||= Lecter::FormatterPayload.new(diagnosis_params[:body_raw])
+    end
+
+    def formatted_headers
+      @formatted_headers ||= Lecter::FormatterHeaders.new(diagnosis_params[:headers])
     end
   end
 end

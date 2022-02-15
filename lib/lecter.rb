@@ -9,6 +9,7 @@ require 'lecter/railtie' if defined?(Rails::Railtie)
 require 'lecter/requester'
 require 'lecter/version'
 require 'lecter/trace_point'
+require 'lecter/formatter_headers'
 
 require 'rest-client'
 

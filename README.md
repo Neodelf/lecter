@@ -79,6 +79,7 @@ Follow **two** simple steps:
 
    `HTTP method` - request's method<br>
    `Endpoint` - use absolute route like `localhost:3000/blogs`<br>
+   `Headers` - request's headers
    `Body(raw)` - request's parameters
 
 ## :man_technologist: Examples
@@ -90,9 +91,10 @@ Here is an example with a **POST** request:
 
    `HTTP method` - `POST`<br>
    `Endpoint` - `localhost:3000/posts`<br>
+   `Headers` - `content_type=text/html,accept=*/*`<br>
    `Body(raw)` - `"post"=>{"title"=>"New title", "description"=>"Desciption"}`
 
-    <img src="https://raw.githubusercontent.com/Neodelf/staff/master/lecter-post-form.png" alt="lecter example post form" title="Example Lecter POST request form" />
+    <img src="https://raw.githubusercontent.com/Neodelf/staff/master/lecter_post_headers.png" alt="lecter example post form" title="Example Lecter POST request form" />
 
 3. **Submit** the form
 4. **Review** the result

@@ -28,6 +28,15 @@
       </div>
     </div>
     <div class="row my-3">
+      <%= label_tag t('.headers'), nil, class: 'col-sm-2 col-form-label' %>
+      <div class="col-sm">
+        <%= text_field_tag :headers, nil, class: 'form-control', placeholder: 'Headers' %>
+      </div>
+      <div class="col-sm gray">
+        content_type=text/html,accept=*/*
+      </div>
+    </div>
+    <div class="row my-3">
       <%= label_tag t('.body_raw'), nil, class: 'col-sm-2 col-form-label' %>
       <div class="col-sm">
         <%= text_area_tag :body_raw, nil, rows: 10, class: 'form-control', placeholder: 'Body(raw)' %>
