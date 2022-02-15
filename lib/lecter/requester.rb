@@ -20,7 +20,7 @@ module Lecter
     rescue URI::InvalidURIError
       @error_message = WRONG_URL_MSG
       false
-    rescue HTTP::Error => e
+    rescue RestClient::ExceptionWithResponse => e
       @error_message = e.message
       false
     end
@@ -43,11 +43,15 @@ module Lecter
     end
 
     def response
-      @response ||= HTTP.public_send(method, url, body: payload.to_json)
+      @response ||= RestClient::Request.execute(
+        method: method,
+        url: url,
+        payload: payload
+      )
     end
 
     def items
-      @items ||= response.body.to_s[3..-1].split(';')
+      @items ||= response.body[3..-1].split(';')
     end
 
     def line_belongs_to_last?(file)
